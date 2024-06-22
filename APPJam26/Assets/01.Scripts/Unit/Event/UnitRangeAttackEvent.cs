@@ -5,7 +5,13 @@ using DG.Tweening;
 
 public class UnitRangeAttackEvent : UnitEvent
 {
-    private bool isEnd = false;
+    // # Fire
+    [SerializeField]
+    private Vector3     firePosOffet;
+    [SerializeField]
+    private GameObject  bulletPrefab;
+
+    private bool        isEnd = false;
 
     public override void Init()
     {
@@ -14,7 +20,12 @@ public class UnitRangeAttackEvent : UnitEvent
 
     public override void InvokeEvent()
     {
+        Vector3    targetDirection     = (_myUnit.OpponentUnit.transform.position - transform.position).normalized;
+        GameObject clone               = Instantiate(bulletPrefab, transform.position + firePosOffet, Quaternion.identity);
+        Bullet     bullet              = clone.GetComponent<Bullet>();
+        // 애니메이션 재생 
 
+        bullet.Initialized(this, targetDirection);
     }
 
     public override bool IsEnd()
@@ -22,4 +33,8 @@ public class UnitRangeAttackEvent : UnitEvent
         return isEnd;
     }
 
+    public void SetIsEnd(bool result)
+    {
+        isEnd = result;
+    }
 }
