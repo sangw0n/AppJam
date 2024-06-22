@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c66693410c0a5f94f8274f9e20dfe59a, type: 3}
-  m_Name: Unit00
+  m_Name: Unit02
   m_EditorClassIdentifier: 
   MyUnitData:
-    UnitName: "\uB179\uB9D0"
-    UnitDescription: "\uC560\uAE30 \uB179\uB9D0\uC774~~~~"
-    UnitSprite: {fileID: 1795916559, guid: 4144edfcae862784c8eb856d568fbd7d, type: 3}
-    UnitUISprite: {fileID: 21300000, guid: 62f6025beff44d74d8bc85ecc602c340, type: 3}
-    UnitMouseOnUISprite: {fileID: 21300000, guid: 62d32edbc80f12646ac94698a30fbbca, type: 3}
-    MaxHealth: 1000
+    UnitName: "\uB3C4\uAD6C\uB9AC"
+    UnitDescription: "\uAC00\uC2DC\uB2EC\uB9B0 \uAC1C\uCCB4"
+    UnitSprite: {fileID: -1048801578, guid: 4620aaa02a4e6d048b2ee402a7da67a7, type: 3}
+    UnitUISprite: {fileID: 21300000, guid: fe7cc35cd740cea47a2fa407afc2e563, type: 3}
+    UnitMouseOnUISprite: {fileID: 21300000, guid: a7513b7a191cf78439f6110ab9602c3b, type: 3}
+    MaxHealth: 500
     Strength: 10
     EventData: {fileID: 698350497742135828, guid: 5acb1afd0098e434186c3f79c3a13321, type: 3}
-    AnimatorController: {fileID: 9100000, guid: 248c6314e3ae8794492e5445c4b908d7, type: 2}
+    AnimatorController: {fileID: 9100000, guid: 12092c6c2819a41429842df2cd480ac2, type: 2}

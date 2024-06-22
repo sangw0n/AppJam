@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class UnitCardUI : MonoBehaviour, IPointerDownHandler
+public class UnitCardUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler
 {
 
     [SerializeField]
@@ -33,6 +33,16 @@ public class UnitCardUI : MonoBehaviour, IPointerDownHandler
         
     }
 
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        _unitImage.sprite = _unitData.UnitMouseOnUISprite;
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        _unitImage.sprite = _unitData.UnitUISprite;
+    }
+
     public void SetData(UnitData data)
     {
 
@@ -40,7 +50,7 @@ public class UnitCardUI : MonoBehaviour, IPointerDownHandler
         _nameText.text          = data.UnitName;
         _descriptionText.text   = data.UnitDescription;
 
-        _unitImage.sprite       = data.UnitSprite;
+        _unitImage.sprite       = data.UnitUISprite;
 
         _statText.text = $"공격력 {data.Strength} | 체력 {data.MaxHealth}";
 

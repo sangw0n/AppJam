@@ -8,6 +8,7 @@ using System.Text;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 public enum Turn
@@ -31,8 +32,11 @@ public enum GameState
 
 public class GameManager : MonoSingleton<GameManager>
 {
+    int _enemyCount = 0;
+
     [Header("Game Info")]
     public List<UnitDataSO> UnitDatas;
+    public UnitDataSO BossUnitData;
 
     private GameState _currentState = GameState.Start;
     public GameState currentState => _currentState;
@@ -74,7 +78,6 @@ public class GameManager : MonoSingleton<GameManager>
     private void GameStart()
     {
 
-        // ���� ���� ����
         SelectUnitPanel.SetActive(true);
         OutBounceAnimationPanel(SelectUnitPanel);
 
@@ -88,9 +91,23 @@ public class GameManager : MonoSingleton<GameManager>
 
         _playerUnit.UnitHP.AddValue(999);
 
-        // Setting
-        SelectEnemyPanel.SetActive(true);
-        OutBounceAnimationPanel(SelectEnemyPanel);
+        if (_enemyCount == 3)
+        {
+
+            _enemyUnit.SetUnitData(BossUnitData.MyUnitData);
+            ChangeGameState(GameState.Battle);
+
+        }
+        else
+        {
+
+            // Setting
+            SelectEnemyPanel.SetActive(true);
+            OutBounceAnimationPanel(SelectEnemyPanel);
+
+        }
+
+        
 
     }
 
@@ -197,8 +214,15 @@ public class GameManager : MonoSingleton<GameManager>
 
     private void GameEnd()
     {
+        if(_enemyCount == 3)
+        {
 
-        // ���� �׾��°� üũ
+            SceneManager.LoadScene(2);
+            return;
+
+        }
+        _enemyCount++;
+        
         _isPlayerWin = _playerUnit.UnitHP.CurrentHealth > 0;
 
         RewardPanel.SetActive(true);
