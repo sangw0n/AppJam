@@ -45,7 +45,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _weight: 1
-  _commentary: 
+  _commentary:
+  - "\uC5D0\uB77C\uC787 \uACF5\uACA9"
+  - "\uC5D0\uB77C\uC787 \uACF5\uACA9\uBC1B\uC544\uB77C"
+  - "\uC5D0\uB77C\uC787 \uACF5\uACA9\uC774\uB2E4"
   offsetDistanceFromEnemy: {x: 1, y: 0, z: 0}
   moveSpeed: 0.5
 --- !u!1 &2856855411078087178
@@ -93,7 +96,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _weight: 1
-  _commentary: 
+  _commentary:
+  - "\uC5D0\uB77C\uC787 \uACF5\uACA9"
+  - "\uC5D0\uB77C\uC787 \uACF5\uACA9\uC774\uB2E4"
+  - "\uC5D0\uB77C\uC787 \uACF5\uACA9\uBC1B\uC544\uB77C"
   firePosOffet: {x: 0, y: -1, z: 0}
   bulletPrefab: {fileID: 1286167935549612449, guid: 2d0f46a6582f9fd4d94c0c02028900cb, type: 3}
 --- !u!1 &7318200667229309041

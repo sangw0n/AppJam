@@ -1,8 +1,11 @@
 using Cinemachine;
 using DG.Tweening;
+using Febucci.UI;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -49,11 +52,19 @@ public class GameManager : MonoSingleton<GameManager>
     public GameObject SelectEnemyPanel;
     public GameObject BettingPanel;
     public GameObject RewardPanel;
+    public GameObject CommentartPanel;
 
     [Header("Betting Info")]
     private float _currentBettingPer;
     private int _bettingGold;
     private Money _money;
+
+    [Header("Commentary Info ")]
+    [SerializeField]
+    private TextMeshProUGUI textCommentary;
+    [SerializeField]
+    private TypewriterByCharacter typewriterByCharacter;
+
 
     public float CurrentBettingPer => _currentBettingPer;
     public int BettingGold => _bettingGold;
@@ -98,6 +109,7 @@ public class GameManager : MonoSingleton<GameManager>
     [Header("GameBattle Info")]
     [SerializeField] private Unit _playerUnit;
     [SerializeField] private Unit _enemyUnit;
+
 
     public float PlayerUnitPower => (_playerUnit.UnitData.Strength * 2 + _playerUnit.UnitData.MaxHealth);
 
@@ -274,4 +286,8 @@ public class GameManager : MonoSingleton<GameManager>
         VCamPerlin.m_FrequencyGain = 0f;
     }
 
+    public void TriggerCommentary(TextMeshProUGUI text, float duration)
+    {
+
+    }
 }

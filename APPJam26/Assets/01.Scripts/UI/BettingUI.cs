@@ -26,6 +26,7 @@ public class BettingUI : MonoBehaviour
         Money.Instance.SpendGold(value);
         GameManager.Instance.SetBettingGold(value);
         GameManager.Instance.ChangeGameState(GameState.Battle);
+        GameManager.Instance.CommentartPanel.SetActive(true);
         gameObject.SetActive(false);
 
     }
