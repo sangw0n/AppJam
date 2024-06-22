@@ -95,5 +95,5 @@ MonoBehaviour:
   _weight: 1
   _commentary:
   - "\uB610\uB86F\uCE58\uAC00 \uAC00\uC2DC\uB97C \uBC1C\uC0AC\uD569\uB2C8\uB2E4!"
-  - "\uAC00\uC2DC\uB97C \uBC1C\uC0AC\uD558\uB124"
+  - "\uAC00\uC2DC\uB97C \uBC1C\uC0AC\uD558\uB124\uC694"
   _spikeBulletPrefab: {fileID: 9187887592104341775, guid: addb022e6aab3e142a49252aacb1ec16, type: 3}
