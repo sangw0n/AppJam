@@ -14,11 +14,17 @@ public class HealthPoint : MonoBehaviour
 
     public int CurrentHealth => _currentHealth;
 
-    public void SetHealthInfo(int currentHealth, int maxHealth)
+    private Animator _animator;
+    private int hashDie;
+
+    public void SetHealthInfo(int currentHealth, int maxHealth, Animator animator, int hashDie)
     {
 
         _currentHealth = currentHealth;
         _maxHealth = maxHealth;
+
+        _animator = animator;
+        this.hashDie = hashDie;
 
         OnHealthChanged?.Invoke(_currentHealth, _maxHealth);
 
@@ -33,6 +39,7 @@ public class HealthPoint : MonoBehaviour
         if (_currentHealth <= 0)
         {
             OnDie?.Invoke();
+            _animator.SetTrigger(hashDie);
         }
 
     }

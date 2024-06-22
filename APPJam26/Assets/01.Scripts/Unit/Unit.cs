@@ -17,15 +17,20 @@ public class Unit : MonoBehaviour
     // Hash
     private readonly int HASH_SHAKE = Shader.PropertyToID("_VibrateFade");
     private readonly int HASH_BLINK = Shader.PropertyToID("_StrongTintFade");
+    public readonly int HASH_ATTACK = Animator.StringToHash("OnAttack");
+    public readonly int HASH_DIE    = Animator.StringToHash("OnDie");
+    public readonly int HASH_IDLE = Animator.StringToHash("OnIdle");
 
     // Info
     private SpriteRenderer _unitSprite;
+    private Animator _animator;
     private UnitData _unitData;
     private HealthPoint _health;
 
     // Get
     public HealthPoint UnitHP => _health;
     public UnitData UnitData => _unitData;
+    public Animator Animator => _animator;
 
     [Header("Info")]
     [SerializeField]
@@ -43,6 +48,7 @@ public class Unit : MonoBehaviour
         // GetCompo
         _health = transform.Find("HP").GetComponent<HealthPoint>();
         _unitSprite = transform.Find("Visual").GetComponent<SpriteRenderer>();
+        _animator = transform.Find("Visual").GetComponent<Animator>();
     }
 
     public void HitDamage(int value)
@@ -77,7 +83,10 @@ public class Unit : MonoBehaviour
 
         // Set Value
         _unitSprite.sprite = _unitData.UnitSprite;
-        _health.SetHealthInfo(_unitData.MaxHealth, _unitData.MaxHealth);
+        //_animator.SetTrigger(HASH_IDLE);
+        _animator.Reset
+        _animator.runtimeAnimatorController = _unitData.AnimatorController;
+        _health.SetHealthInfo(_unitData.MaxHealth, _unitData.MaxHealth, _animator, HASH_DIE);
         _unitUI.SetName(_unitData.UnitName);
 
         _unitEventDictionary = new Dictionary<Turn, List<UnitEvent>>()

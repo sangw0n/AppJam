@@ -20,7 +20,7 @@ public class UnitMeleeAttackEvent : UnitEvent
 
         _unitTransform = _myUnit.transform;
 
-        waitForSecondsSpeed = new WaitForSeconds(moveSpeed + 0.2f);
+        waitForSecondsSpeed = new WaitForSeconds(moveSpeed + 0.1f);
     }
 
     public override void InvokeEvent()
@@ -44,7 +44,7 @@ public class UnitMeleeAttackEvent : UnitEvent
         _unitTransform.DOMove(_myUnit.OpponentUnit.transform.position + _offsetDistanceFromEnemy, moveSpeed);
 
         // 애니메이션 
-        
+        _myUnit.Animator.SetTrigger(_myUnit.HASH_ATTACK);
         yield return waitForSecondsSpeed;
         _myUnit.OpponentUnit.HitDamage(_myUnit.UnitData.Strength);
         yield return waitForSeconds02;
