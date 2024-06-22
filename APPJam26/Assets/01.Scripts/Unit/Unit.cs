@@ -31,6 +31,9 @@ public class Unit : MonoBehaviour
     private UnitDataSO _unitDataSO;
     [SerializeField]
     private UnitUI _unitUI;
+    [SerializeField]
+    private Unit _opponentUnit;
+    public Unit OpponentUnit => _opponentUnit;
 
     [SerializeField]
     private List<BattleEventData> _unitEventDatas = new List<BattleEventData>();
