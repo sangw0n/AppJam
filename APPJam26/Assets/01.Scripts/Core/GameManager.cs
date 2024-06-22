@@ -100,16 +100,20 @@ public class GameManager : MonoSingleton<GameManager>
     int _currentTurnIndex = 0;
     private Turn[] _turnFlow = { Turn.Start, Turn.PlayerTurn, Turn.Battle, Turn.End };
 
+    int _turnLoopCount = 0;
     IEnumerator BattleTurnLoopCoroutine()
     {
+        _turnLoopCount = 0;
 
         while(!_isBattleEnd)
         {
 
+            if (++_turnLoopCount >= 100)
+                break;
+
             List<UnitEvent> playerUnitEvents = _playerUnit.GetTurnEvent(_currentTurn);
             List<UnitEvent> enemyUnitEvents = _enemyUnit.GetTurnEvent(_currentTurn);
 
-            //
             if (playerUnitEvents.Count > 0)
             {
                 UnitEvent playerUnitEvent = playerUnitEvents[Random.Range(0, playerUnitEvents.Count)];
