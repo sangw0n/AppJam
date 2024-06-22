@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Unit02
   m_EditorClassIdentifier: 
   MyUnitData:
-    UnitName: "\uB3C4\uAD6C\uB9AC"
+    UnitName: "\uB610\uB86F\uCE58"
     UnitDescription: "\uAC00\uC2DC\uB2EC\uB9B0 \uAC1C\uCCB4"
     UnitSprite: {fileID: -1048801578, guid: 4620aaa02a4e6d048b2ee402a7da67a7, type: 3}
-    UnitUISprite: {fileID: 21300000, guid: fe7cc35cd740cea47a2fa407afc2e563, type: 3}
-    UnitMouseOnUISprite: {fileID: 21300000, guid: a7513b7a191cf78439f6110ab9602c3b, type: 3}
+    UnitUISprite: {fileID: 21300000, guid: 8f8984666d7429c48b811b81212ed99e, type: 3}
+    UnitMouseOnUISprite: {fileID: 21300000, guid: aa14b935a7474f34d8e59774c72cd485, type: 3}
     MaxHealth: 500
     Strength: 10
     EventData: {fileID: 698350497742135828, guid: 5acb1afd0098e434186c3f79c3a13321, type: 3}

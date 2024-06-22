@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShopUI : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class ShopUI : MonoBehaviour
 
     [SerializeField]
     private Unit _playerUnit;
+    [SerializeField]
+    private Image _unitImage;
 
     [SerializeField]
     private Transform _failTrm;
@@ -29,6 +32,8 @@ public class ShopUI : MonoBehaviour
 
     private void OnEnable()
     {
+        _unitImage.sprite = _playerUnit.UnitData.UnitUISprite;
+        UpdateStatData();
         HandleUpdateGold(Money.Instance.CurrentGold);
     }
 
