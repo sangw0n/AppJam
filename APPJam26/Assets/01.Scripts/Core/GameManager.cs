@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -56,6 +57,7 @@ public class GameManager : MonoSingleton<GameManager>
 
         // 본인 유닛 선택
         SelectUnitPanel.SetActive(true);
+        OutBounceAnimationPanel(SelectUnitPanel);
 
     }
 
@@ -65,8 +67,11 @@ public class GameManager : MonoSingleton<GameManager>
     private void GameSetting()
     {
 
+        _playerUnit.UnitHP.AddValue(9999);
+
         // Setting
         SelectEnemyPanel.SetActive(true);
+        OutBounceAnimationPanel(SelectEnemyPanel);
 
     }
 
@@ -110,7 +115,7 @@ public class GameManager : MonoSingleton<GameManager>
     {
         _turnLoopCount = 0;
 
-        while(!_isBattleEnd)
+        while (!_isBattleEnd)
         {
 
             if (++_turnLoopCount >= 100)
@@ -118,7 +123,7 @@ public class GameManager : MonoSingleton<GameManager>
 
 
             List<UnitEvent> playerUnitEvents;
-            if(_currentTurn == Turn.PlayerTurn)
+            if (_currentTurn == Turn.PlayerTurn)
                 playerUnitEvents = _playerUnit.GetTurnEvent(Turn.Battle);
             else
                 playerUnitEvents = _playerUnit.GetTurnEvent(_currentTurn);
@@ -177,11 +182,11 @@ public class GameManager : MonoSingleton<GameManager>
         _isPlayerWin = _playerUnit.UnitHP.CurrentHealth > 0;
 
         RewardPanel.SetActive(true);
-        
+        OutBounceAnimationPanel(RewardPanel);
 
     }
 
-#endregion
+    #endregion
 
     private void Start()
     {
@@ -192,6 +197,13 @@ public class GameManager : MonoSingleton<GameManager>
             Init();
 
         }
+    }
+
+    public void OutBounceAnimationPanel(GameObject uiObject)
+    {
+        Transform tweeningObject = uiObject.transform.GetChild(0);
+        tweeningObject.localScale = new Vector3(1, 0, 1);
+        tweeningObject.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutElastic);
     }
 
     protected override void Init()
