@@ -12,6 +12,8 @@ public class HealthPoint : MonoBehaviour
     private int _currentHealth;
     private int _maxHealth;
 
+    public int CurrentHealth => _currentHealth;
+
     public void SetHealthInfo(int currentHealth, int maxHealth)
     {
 
@@ -25,7 +27,7 @@ public class HealthPoint : MonoBehaviour
     public void AddValue(int value)
     {
       
-        _currentHealth += value;
+        _currentHealth = Mathf.Clamp(_currentHealth + value, 0, _maxHealth);
         OnHealthChanged?.Invoke(_currentHealth, _maxHealth);
 
         if (_currentHealth <= 0)

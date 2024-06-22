@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c66693410c0a5f94f8274f9e20dfe59a, type: 3}
-  m_Name: Test
+  m_Name: Test 2
   m_EditorClassIdentifier: 
   MyUnitData:
-    UnitName: Test
-    UnitDescription: "\uD14C\uC2A4\uD2B8\uC6A9\uC785\uB2C8"
-    UnitSprite: {fileID: -1646661459, guid: b490dad17ebe1e84eb9c9c73e5b6e2c6, type: 3}
-    MaxHealth: 500
-    Strength: 20
+    UnitName: AK47
+    UnitDescription: "\uC774\uAC8C \uBB58\uAE4C\uC694 "
+    UnitSprite: {fileID: -1278490966, guid: b490dad17ebe1e84eb9c9c73e5b6e2c6, type: 3}
+    MaxHealth: 10
+    Strength: 1000

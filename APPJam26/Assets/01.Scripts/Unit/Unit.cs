@@ -25,29 +25,24 @@ public class Unit : MonoBehaviour
 
     // Get
     public HealthPoint UnitHP => _health;
+    public UnitData UnitData => _unitData;
 
     [Header("Info")]
-    [SerializeField]
-    private UnitDataSO _unitDataSO;
     [SerializeField]
     private UnitUI _unitUI;
     [SerializeField]
     private Unit _opponentUnit;
     public Unit OpponentUnit => _opponentUnit;
 
-    [SerializeField]
     private List<BattleEventData> _unitEventDatas = new List<BattleEventData>();
     private Dictionary<Turn, List<UnitEvent>> _unitEventDictionary;
+    private UnitEventDataObject _unitEventObject;
 
-    private void Start()
+    public void Init()
     {
-
         // GetCompo
         _health = transform.Find("HP").GetComponent<HealthPoint>();
         _unitSprite = transform.Find("Visual").GetComponent<SpriteRenderer>();
-
-        SetUnitData(_unitDataSO);
-
     }
 
     public void HitDamage(int value)
@@ -71,12 +66,14 @@ public class Unit : MonoBehaviour
 
     }
 
-    public void SetUnitData(UnitDataSO unitDataSO)
+    public void SetUnitData(UnitData unitData)
     {
-        _unitDataSO = unitDataSO;
-
         // Get Value
-        _unitData = _unitDataSO.MyUnitData;
+        _unitData = unitData;
+
+        // eventData
+        _unitEventObject = Instantiate(_unitData.EventData, transform);
+        _unitEventDatas = _unitEventObject.UnitEventDatas;
 
         // Set Value
         _unitSprite.sprite = _unitData.UnitSprite;

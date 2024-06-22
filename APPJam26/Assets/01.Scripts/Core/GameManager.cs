@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public enum Turn
 {
@@ -23,6 +24,8 @@ public enum GameState
 
 public class GameManager : MonoSingleton<GameManager>
 {
+    [Header("Game Info")]
+    public List<UnitDataSO> UnitDatas;
 
     private GameState _currentState = GameState.Start;
     public GameState currentState => _currentState;
@@ -33,12 +36,26 @@ public class GameManager : MonoSingleton<GameManager>
     public Dictionary<GameState, Action> GameStateEvent;
     public Dictionary<Turn, Action> GameTurnEvent;
 
+    [Header("UI")]
+    public GameObject SelectUnitPanel;
+    public GameObject SelectEnemyPanel;
+    public GameObject BettingPanel;
+    public GameObject RewardPanel;
+
+    [Header("Betting Info")]
+    private float _currentBettingPer;
+    private int _bettingGold;
+    private Money _money;
+
+    public float CurrentBettingPer => _currentBettingPer;
+    public int BettingGold => _bettingGold;
+
     #region Game_StartStateValue
     private void GameStart()
     {
 
         // 본인 유닛 선택
-
+        SelectUnitPanel.SetActive(true);
 
     }
 
@@ -49,7 +66,18 @@ public class GameManager : MonoSingleton<GameManager>
     {
 
         // Setting
+        SelectEnemyPanel.SetActive(true);
 
+    }
+
+    public void SetBettingPer(float bettingPer)
+    {
+        _currentBettingPer = bettingPer;
+    }
+
+    public void SetBettingGold(int bettingGold)
+    {
+        _bettingGold = bettingGold;
     }
 
     #endregion
@@ -59,13 +87,17 @@ public class GameManager : MonoSingleton<GameManager>
     [SerializeField] private Unit _playerUnit;
     [SerializeField] private Unit _enemyUnit;
 
+    public float PlayerUnitPower => (_playerUnit.UnitData.Strength * 2 + _playerUnit.UnitData.MaxHealth);
+
     private bool _isBattleEnd = false;
 
     private void GameBattle()
     {
 
         // Turn
+        _isBattleEnd = false;
         _currentTurn = Turn.Start;
+        _currentTurnIndex = 0;
         StartCoroutine(BattleTurnLoopCoroutine());
 
     }
@@ -73,40 +105,99 @@ public class GameManager : MonoSingleton<GameManager>
     int _currentTurnIndex = 0;
     private Turn[] _turnFlow = { Turn.Start, Turn.PlayerTurn, Turn.Battle, Turn.End };
 
+    int _turnLoopCount = 0;
     IEnumerator BattleTurnLoopCoroutine()
     {
+        _turnLoopCount = 0;
 
-        List<UnitEvent> playerUnitEvent = _playerUnit.GetTurnEvent(_currentTurn);
-        List<UnitEvent> enemyUnitEvent = _enemyUnit.GetTurnEvent(_currentTurn);
+        while(!_isBattleEnd)
+        {
 
+            if (++_turnLoopCount >= 100)
+                break;
 
+            List<UnitEvent> playerUnitEvents = _playerUnit.GetTurnEvent(_currentTurn);
+            List<UnitEvent> enemyUnitEvents = _enemyUnit.GetTurnEvent(_currentTurn);
 
+            if (playerUnitEvents.Count > 0)
+            {
+                UnitEvent playerUnitEvent = playerUnitEvents[Random.Range(0, playerUnitEvents.Count)];
 
-        _currentTurnIndex = (_currentTurnIndex + 1) % 4;
-        _currentTurn = _turnFlow[_currentTurnIndex];
+                playerUnitEvent.Init();
+                playerUnitEvent.InvokeEvent();
+                Debug.Log("Player Turn");
+                yield return new WaitUntil(() => playerUnitEvent.IsEnd());
 
+            }
+
+            if (_isBattleEnd)
+                break;
+
+            if (enemyUnitEvents.Count > 0)
+            {
+                UnitEvent enemyUnitEvent = enemyUnitEvents[Random.Range(0, enemyUnitEvents.Count)];
+
+                enemyUnitEvent.Init();
+                enemyUnitEvent.InvokeEvent();
+                Debug.Log("Enemy Turn");
+                yield return new WaitUntil(() => enemyUnitEvent.IsEnd());
+
+            }
+
+            _currentTurnIndex = (_currentTurnIndex + 1) % 4;
+            _currentTurn = _turnFlow[_currentTurnIndex];
+
+        }
+
+        ChangeGameState(GameState.GameEnd);
     }
 
     private void BattleEndEvent()
     {
 
         _isBattleEnd = true;
-        ChangeGameState(GameState.GameEnd);
 
     }
 
     #endregion
 
     #region Game_GameEndStateValue
+    bool _isPlayerWin = false;
+    public bool IsPlayerWin => _isPlayerWin;
+
     private void GameEnd()
     {
 
+        // 누가 죽었는가 체크
+        _isPlayerWin = _playerUnit.UnitHP.CurrentHealth > 0;
+
+        RewardPanel.SetActive(true);
+        
+
     }
 
-    #endregion
+#endregion
+
+    private void Start()
+    {
+        if (instance == null)
+        {
+
+            instance = this;
+            Init();
+
+        }
+    }
 
     protected override void Init()
     {
+
+        _playerUnit.Init();
+        _enemyUnit.Init();
+        _money = Money.Instance;
+
+        _playerUnit.UnitHP.OnDie += BattleEndEvent;
+        _enemyUnit.UnitHP.OnDie += BattleEndEvent;
 
         GameStateEvent = new Dictionary<GameState, Action>()
         {
