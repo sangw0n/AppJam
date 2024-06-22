@@ -7,6 +7,7 @@ public class HealthPoint : MonoBehaviour
 {
     // CurrentHealth, MaxHealth
     public event Action<int, int> OnHealthChanged;
+    public event Action OnDie;
 
     private int _currentHealth;
     private int _maxHealth;
@@ -26,6 +27,11 @@ public class HealthPoint : MonoBehaviour
       
         _currentHealth += value;
         OnHealthChanged?.Invoke(_currentHealth, _maxHealth);
+
+        if (_currentHealth <= 0)
+        {
+            OnDie?.Invoke();
+        }
 
     }
 

@@ -6,7 +6,7 @@ using UnityEngine;
 public struct BattleEventData
 {
 
-    public GameState ActivatedGameState;
+    public Turn ActivatedGameState;
     public UnitEvent UnitGameEvent;
 
 }
@@ -15,11 +15,16 @@ public class Unit : MonoBehaviour
 {
 
     // Hash
+    private readonly int HASH_SHAKE = Shader.PropertyToID("_VibrateFade");
+    private readonly int HASH_BLINK = Shader.PropertyToID("_StrongTintFade");
 
     // Info
     private SpriteRenderer _unitSprite;
     private UnitData _unitData;
     private HealthPoint _health;
+
+    // Get
+    public HealthPoint UnitHP => _health;
 
     [Header("Info")]
     [SerializeField]
@@ -29,7 +34,7 @@ public class Unit : MonoBehaviour
 
     [SerializeField]
     private List<BattleEventData> _unitEventDatas = new List<BattleEventData>();
-    private Dictionary<GameState, List<UnitEvent>> _unitEventDictionary;
+    private Dictionary<Turn, List<UnitEvent>> _unitEventDictionary;
 
     private void Start()
     {
@@ -37,6 +42,35 @@ public class Unit : MonoBehaviour
         // GetCompo
         _health = transform.Find("HP").GetComponent<HealthPoint>();
         _unitSprite = transform.Find("Visual").GetComponent<SpriteRenderer>();
+
+        SetUnitData(_unitDataSO);
+
+    }
+
+    public void HitDamage(int value)
+    {
+        
+        _health.AddValue(-value);
+        StartCoroutine(HitDamageCoroutine());
+
+    }
+
+    private WaitForSeconds _delayTime = new WaitForSeconds(0.1f);
+    private IEnumerator HitDamageCoroutine()
+    {
+
+        _unitSprite.material.SetFloat(HASH_SHAKE, 1f);
+        _unitSprite.material.SetFloat(HASH_BLINK, 1f);
+        yield return _delayTime;
+
+        _unitSprite.material.SetFloat(HASH_SHAKE, 0f);
+        _unitSprite.material.SetFloat(HASH_BLINK, 0f);
+
+    }
+
+    public void SetUnitData(UnitDataSO unitDataSO)
+    {
+        _unitDataSO = unitDataSO;
 
         // Get Value
         _unitData = _unitDataSO.MyUnitData;
@@ -46,14 +80,12 @@ public class Unit : MonoBehaviour
         _health.SetHealthInfo(_unitData.MaxHealth, _unitData.MaxHealth);
         _unitUI.SetName(_unitData.UnitName);
 
-        _unitEventDictionary = new Dictionary<GameState, List<UnitEvent>>()
+        _unitEventDictionary = new Dictionary<Turn, List<UnitEvent>>()
         {
-            { GameState.Start, new List<UnitEvent>() },
-            { GameState.PlayerTurn, new List<UnitEvent>() },
-            { GameState.Battle, new List<UnitEvent>() },
-            { GameState.End, new List<UnitEvent>() },
-            { GameState.Setting, new List<UnitEvent>() },
-            { GameState.GameEnd, new List<UnitEvent>() },
+            { Turn.Start, new List<UnitEvent>() },
+            { Turn.PlayerTurn, new List<UnitEvent>() },
+            { Turn.Battle, new List<UnitEvent>() },
+            { Turn.End, new List<UnitEvent>() },
         };
 
         // Init
@@ -66,8 +98,6 @@ public class Unit : MonoBehaviour
         });
 
     }
-
-
 
 
 }

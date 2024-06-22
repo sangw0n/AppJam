@@ -12,3 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c66693410c0a5f94f8274f9e20dfe59a, type: 3}
   m_Name: Test
   m_EditorClassIdentifier: 
+  MyUnitData:
+    UnitName: Test
+    UnitSprite: {fileID: -1646661459, guid: b490dad17ebe1e84eb9c9c73e5b6e2c6, type: 3}
+    MaxHealth: 500
+    Strength: 20
