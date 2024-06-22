@@ -20,5 +20,5 @@ MonoBehaviour:
     UnitMouseOnUISprite: {fileID: 21300000, guid: aa14b935a7474f34d8e59774c72cd485, type: 3}
     MaxHealth: 500
     Strength: 10
-    EventData: {fileID: 698350497742135828, guid: 5acb1afd0098e434186c3f79c3a13321, type: 3}
+    EventData: {fileID: 698350497742135828, guid: 2882dbb782af7e54fab02c3be6249325, type: 3}
     AnimatorController: {fileID: 9100000, guid: 12092c6c2819a41429842df2cd480ac2, type: 2}
