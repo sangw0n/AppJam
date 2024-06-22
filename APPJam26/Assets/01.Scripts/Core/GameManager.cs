@@ -116,10 +116,16 @@ public class GameManager : MonoSingleton<GameManager>
             if (++_turnLoopCount >= 100)
                 break;
 
-            List<UnitEvent> playerUnitEvents = _playerUnit.GetTurnEvent(_currentTurn);
+
+            List<UnitEvent> playerUnitEvents;
+            if(_currentTurn == Turn.PlayerTurn)
+                playerUnitEvents = _playerUnit.GetTurnEvent(Turn.Battle);
+            else
+                playerUnitEvents = _playerUnit.GetTurnEvent(_currentTurn);
+
             List<UnitEvent> enemyUnitEvents = _enemyUnit.GetTurnEvent(_currentTurn);
 
-            if (playerUnitEvents.Count > 0)
+            if (playerUnitEvents.Count > 0 && _currentTurn != Turn.Battle)
             {
                 UnitEvent playerUnitEvent = playerUnitEvents[Random.Range(0, playerUnitEvents.Count)];
 
@@ -139,7 +145,6 @@ public class GameManager : MonoSingleton<GameManager>
 
                 enemyUnitEvent.Init();
                 enemyUnitEvent.InvokeEvent();
-                Debug.Log("Enemy Turn");
                 yield return new WaitUntil(() => enemyUnitEvent.IsEnd());
 
             }
