@@ -48,7 +48,7 @@ MonoBehaviour:
   _commentary:
   - "\uB179\uB9D0\uC774\uAC00 \uACF5\uACA9\uD569\uB2C8\uB2E4!"
   - "\uB2E8\uC21C\uD55C \uACF5\uACA9\uC774\uB124\uC694"
-  - "\uC57D\uAC04 \uC544\uC26C\uC6B4 \uACF5\uACA9\uC774\uB124"
+  - "\uC57D\uAC04 \uC544\uC26C\uC6B4 \uACF5\uACA9\uC774\uB124\uC694"
   offsetDistanceFromEnemy: {x: 1, y: 0, z: 0}
   moveSpeed: 0.5
 --- !u!1 &4783211683676707644

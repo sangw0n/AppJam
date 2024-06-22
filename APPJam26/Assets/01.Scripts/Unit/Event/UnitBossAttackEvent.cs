@@ -19,6 +19,9 @@ public class UnitBossAttackEvent : UnitEvent
 
     public override void InvokeEvent()
     {
+        int index = Random.Range(0, _commentary.Length);
+        StartCoroutine(GameManager.Instance.Co_InputText(_commentary[index]));
+
         StartCoroutine(Co_Attack());
     }
 

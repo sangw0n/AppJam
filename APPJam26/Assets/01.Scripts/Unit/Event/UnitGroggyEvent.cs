@@ -15,6 +15,8 @@ public class UnitGroggyEvent : UnitEvent
     {
         // 애니메이션
         // 파티클 연출
+        int index = Random.Range(0, _commentary.Length);
+        StartCoroutine(GameManager.Instance.Co_InputText(_commentary[index]));
 
         _myUnit.UnitHP.AddValue(-int.MaxValue);
 
