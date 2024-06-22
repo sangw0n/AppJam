@@ -11,6 +11,7 @@ public struct UnitData
     public string UnitDescription;
     public Sprite UnitSprite;
     public Sprite UnitUISprite;
+    public Sprite UnitMouseOnUISprite;
     public int MaxHealth;
     public int Strength;
     public UnitEventDataObject EventData;
