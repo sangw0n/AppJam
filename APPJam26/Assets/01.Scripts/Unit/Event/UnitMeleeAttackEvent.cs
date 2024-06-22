@@ -26,14 +26,14 @@ public class UnitMeleeAttackEvent : UnitEvent
         Vector3 _tempPosition               = transform.position;
         Vector3 _offsetDistanceFromEnemy    = offsetDistanceFromEnemy;
 
-        // ÀûÀÌ ³» À§Ä¡º¸´Ù ¿ÞÂÊ¿¡ ÀÖÀ½ 
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ê¿ï¿½ ï¿½ï¿½ï¿½ï¿½ 
         if (transform.position.x < _myUnit.OpponentUnit.transform.position.x)
             _offsetDistanceFromEnemy *= -1;
 
         transform.DOMove(_myUnit.OpponentUnit.transform.position + _offsetDistanceFromEnemy, 1.5f);
 
-        // ¾Ö´Ï¸ÞÀÌ¼Ç ½ÇÇà
-        // ÀûÇÑÅ× µ¥¹ÌÁö ÁÖ±â
+        // ï¿½Ö´Ï¸ï¿½ï¿½Ì¼ï¿½ ï¿½ï¿½ï¿½ï¿½
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö±ï¿½
 
         yield return waitForSeconds;
 
