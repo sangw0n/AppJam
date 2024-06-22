@@ -5,7 +5,9 @@ using UnityEngine;
 public abstract class UnitEvent : MonoBehaviour
 {
     [SerializeField]
-    private int _weight = 1;
+    private   int _weight = 1;
+    [SerializeField]
+    private string _commentary;
     protected Unit _myUnit;
 
     public void SetOwner(Unit owner)
@@ -16,6 +18,5 @@ public abstract class UnitEvent : MonoBehaviour
     public abstract void Init();
     public abstract void InvokeEvent();
     public abstract bool IsEnd();
-
 
 }
