@@ -284,7 +284,7 @@ MonoBehaviour:
   goldText: {fileID: 1085044376}
   _statText: {fileID: 1873587392}
   _playerUnit: {fileID: 187187462}
-  _unitImage: {fileID: 0}
+  _unitImage: {fileID: 1695437578}
   _failTrm: {fileID: 150594631}
   _failText: {fileID: 1627419251}
   _failTexts:
