@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -19,10 +20,33 @@ public class BettingUI : MonoBehaviour
 
     public void PressBettingBtn()
     {
+        int value = int.Parse(_bettingField.text);
 
-        GameManager.Instance.SetBettingGold(int.Parse(_bettingField.text));
+        Money.Instance.SpendGold(value);
+        GameManager.Instance.SetBettingGold(value);
         GameManager.Instance.ChangeGameState(GameState.Battle);
         gameObject.SetActive(false);
+
+    }
+    public void ClampValue()
+    {
+        if (string.IsNullOrEmpty(_bettingField.text)
+            || _bettingField.text == "-")
+        {
+            _bettingField.text = "0";
+        }
+
+        try
+        {
+            int value = int.Parse(_bettingField.text);
+            value = Mathf.Clamp(value, 0, Money.Instance.CurrentGold);
+
+            _bettingField.text = value.ToString();
+        }
+        catch(Exception e)
+        {
+            Debug.LogError(e.Message);
+        }
 
     }
 

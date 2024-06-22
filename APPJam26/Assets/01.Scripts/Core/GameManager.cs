@@ -44,8 +44,11 @@ public class GameManager : MonoSingleton<GameManager>
 
     [Header("Betting Info")]
     private float _currentBettingPer;
-    private float _bettingGold;
+    private int _bettingGold;
     private Money _money;
+
+    public float CurrentBettingPer => _currentBettingPer;
+    public int BettingGold => _bettingGold;
 
     #region Game_StartStateValue
     private void GameStart()
@@ -92,7 +95,9 @@ public class GameManager : MonoSingleton<GameManager>
     {
 
         // Turn
+        _isBattleEnd = false;
         _currentTurn = Turn.Start;
+        _currentTurnIndex = 0;
         StartCoroutine(BattleTurnLoopCoroutine());
 
     }
@@ -120,12 +125,13 @@ public class GameManager : MonoSingleton<GameManager>
 
                 playerUnitEvent.Init();
                 playerUnitEvent.InvokeEvent();
-                yield return new WaitUntil(playerUnitEvent.IsEnd);
+                Debug.Log("Player Turn");
+                yield return new WaitUntil(() => playerUnitEvent.IsEnd());
 
             }
 
             if (_isBattleEnd)
-                yield break;
+                break;
 
             if (enemyUnitEvents.Count > 0)
             {
@@ -133,7 +139,8 @@ public class GameManager : MonoSingleton<GameManager>
 
                 enemyUnitEvent.Init();
                 enemyUnitEvent.InvokeEvent();
-                yield return new WaitUntil(enemyUnitEvent.IsEnd);
+                Debug.Log("Enemy Turn");
+                yield return new WaitUntil(() => enemyUnitEvent.IsEnd());
 
             }
 
@@ -141,27 +148,35 @@ public class GameManager : MonoSingleton<GameManager>
             _currentTurn = _turnFlow[_currentTurnIndex];
 
         }
-        
 
+        ChangeGameState(GameState.GameEnd);
     }
 
     private void BattleEndEvent()
     {
 
         _isBattleEnd = true;
-        ChangeGameState(GameState.GameEnd);
 
     }
 
     #endregion
 
     #region Game_GameEndStateValue
+    bool _isPlayerWin = false;
+    public bool IsPlayerWin => _isPlayerWin;
+
     private void GameEnd()
     {
-        ChangeGameState(GameState.Start);
+
+        // 누가 죽었는가 체크
+        _isPlayerWin = _playerUnit.UnitHP.CurrentHealth > 0;
+
+        RewardPanel.SetActive(true);
+        
+
     }
 
-    #endregion
+#endregion
 
     private void Start()
     {

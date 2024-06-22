@@ -27,7 +27,7 @@ public class Money : MonoSingleton<Money>
     private void HandleUpdateGoldText(int gold)
     {
 
-        _goldTextUI.text = $"소지금 : {gold}G";
+        _goldTextUI.text = $"소지금 : {gold} G";
 
     }
 
