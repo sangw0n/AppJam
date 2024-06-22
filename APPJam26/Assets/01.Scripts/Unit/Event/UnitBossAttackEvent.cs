@@ -36,7 +36,7 @@ public class UnitBossAttackEvent : UnitEvent
         yield return new WaitForSeconds(moveSpeed + 0.1f);
 
         _myUnit.Animator.SetTrigger(_myUnit.HASH_ATTACK);
-        _myUnit.OpponentUnit.HitDamage(_myUnit.UnitData.Strength);
+        _myUnit.OpponentUnit.HitDamage(_myUnit.UnitData.Strength * 2);
 
         yield return new WaitForSeconds(0.4f);
 

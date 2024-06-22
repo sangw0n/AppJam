@@ -3773,7 +3773,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9a024f8651bc8b345b71a50c2e2d8bf1, type: 2}
   - {fileID: 11400000, guid: 03062ee74c79dd44a9af9bd9b3ac5300, type: 2}
   - {fileID: 11400000, guid: e8fc8256851f0774496ddcac0025aa0e, type: 2}
-  - {fileID: 11400000, guid: 7dd1c47c7ecee714884051544bd5de20, type: 2}
   BossUnitData: {fileID: 11400000, guid: 7dd1c47c7ecee714884051544bd5de20, type: 2}
   VCam: {fileID: 1521300058}
   SelectUnitPanel: {fileID: 1834399291}
@@ -5160,7 +5159,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 400, y: 10}
-  m_SizeDelta: {x: 280.01, y: 70.01}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1064191647
 MonoBehaviour:
@@ -9001,8 +9000,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 40, y: 0}
-  m_SizeDelta: {x: 250, y: 250}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 400, y: 400}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1941944474
 MonoBehaviour:
@@ -9024,9 +9023,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -487354495, guid: b490dad17ebe1e84eb9c9c73e5b6e2c6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7fc18ab7cadc6ef448484443ea6fdd76, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
