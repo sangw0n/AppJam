@@ -26,6 +26,7 @@ public class Unit : MonoBehaviour
     private Animator _animator;
     private UnitData _unitData;
     private HealthPoint _health;
+    private AudioSource _hitAudioSource;
 
     // Get
     public HealthPoint UnitHP => _health;
@@ -49,11 +50,14 @@ public class Unit : MonoBehaviour
         _health = transform.Find("HP").GetComponent<HealthPoint>();
         _unitSprite = transform.Find("Visual").GetComponent<SpriteRenderer>();
         _animator = transform.Find("Visual").GetComponent<Animator>();
+
+        _hitAudioSource = transform.Find("HitSound").GetComponent<AudioSource>();
     }
 
     public void HitDamage(int value)
     {
         
+        _hitAudioSource.Play();
         _health.AddValue(-value);
         StartCoroutine(HitDamageCoroutine());
         GameManager.Instance.CameraShake(0.1f);

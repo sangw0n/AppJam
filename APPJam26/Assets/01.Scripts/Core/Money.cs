@@ -28,7 +28,7 @@ public class Money : MonoSingleton<Money>
 
     public void SpendGold(int value)
     {
-        _currentGold -= value;
+        _currentGold = Mathf.Clamp(_currentGold - value, 0, int.MaxValue);
         OnGoldChanged?.Invoke(_currentGold);
     }
 

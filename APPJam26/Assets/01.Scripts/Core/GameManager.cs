@@ -50,6 +50,9 @@ public class GameManager : MonoSingleton<GameManager>
     public GameObject BettingPanel;
     public GameObject RewardPanel;
 
+    public AudioSource UIClickSound;
+    public AudioSource OpenPanelSound;
+
     [Header("Betting Info")]
     private float _currentBettingPer;
     private int _bettingGold;
@@ -222,6 +225,8 @@ public class GameManager : MonoSingleton<GameManager>
 
     public void OutBounceAnimationPanel(GameObject uiObject)
     {
+        OpenPanelSound.Play();
+
         Transform tweeningObject = uiObject.transform.GetChild(0);
         tweeningObject.localScale = new Vector3(1, 0, 1);
         tweeningObject.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutElastic);
@@ -272,6 +277,11 @@ public class GameManager : MonoSingleton<GameManager>
         yield return new WaitForSeconds(time);
         VCamPerlin.m_AmplitudeGain = 0f;
         VCamPerlin.m_FrequencyGain = 0f;
+    }
+
+    public void PlayUIClickSound()
+    {
+        UIClickSound.Play();
     }
 
 }

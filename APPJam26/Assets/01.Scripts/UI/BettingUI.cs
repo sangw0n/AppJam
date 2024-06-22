@@ -40,7 +40,10 @@ public class BettingUI : MonoBehaviour
         try
         {
             int value = int.Parse(_bettingField.text);
-            value = Mathf.Clamp(value, 100, Money.Instance.CurrentGold);
+            value = Mathf.Clamp(value, 0, Money.Instance.CurrentGold);
+
+            if (value < 100)
+                value = 100;
 
             _bettingField.text = value.ToString();
         }

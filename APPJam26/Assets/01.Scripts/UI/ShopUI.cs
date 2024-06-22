@@ -62,6 +62,8 @@ public class ShopUI : MonoBehaviour
 
     private void RandomUpgradeHealthStat(float per, int minValue, int maxValue)
     {
+        if (Money.Instance.CurrentGold < 1000)
+            return;
 
         Money.Instance.SpendGold(1000);
 
@@ -87,6 +89,8 @@ public class ShopUI : MonoBehaviour
     }
     private void RandomUpgradeStrengthStat(float per, int minValue, int maxValue)
     {
+        if (Money.Instance.CurrentGold < 1000)
+            return;
 
         Money.Instance.SpendGold(1000);
 

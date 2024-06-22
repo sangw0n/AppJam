@@ -28,6 +28,7 @@ public class UnitCardUI : MonoBehaviour, IPointerDownHandler
     public void OnPointerDown(PointerEventData eventData)
     {
 
+        GameManager.Instance.PlayUIClickSound();
         ClickEvent?.Invoke(_unitData);
         
     }
