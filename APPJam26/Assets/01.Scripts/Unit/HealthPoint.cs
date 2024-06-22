@@ -17,6 +17,16 @@ public class HealthPoint : MonoBehaviour
     private Animator _animator;
     private int hashDie;
 
+    public void SetHealthInfo(int currentHealth, int maxHealth)
+    {
+
+        _currentHealth = currentHealth;
+        _maxHealth = maxHealth;
+
+        OnHealthChanged?.Invoke(_currentHealth, _maxHealth);
+
+    }
+
     public void SetHealthInfo(int currentHealth, int maxHealth, Animator animator, int hashDie)
     {
 

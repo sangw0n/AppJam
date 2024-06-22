@@ -85,7 +85,7 @@ public class Unit : MonoBehaviour
         // Set Value
         _unitSprite.sprite = _unitData.UnitSprite;
         //_animator.SetTrigger(HASH_IDLE);
-        _animator.Reset
+        _animator.ResetTrigger(HASH_DIE);
         _animator.runtimeAnimatorController = _unitData.AnimatorController;
         _health.SetHealthInfo(_unitData.MaxHealth, _unitData.MaxHealth, _animator, HASH_DIE);
         _unitUI.SetName(_unitData.UnitName);
