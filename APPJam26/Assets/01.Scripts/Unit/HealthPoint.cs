@@ -49,6 +49,7 @@ public class HealthPoint : MonoBehaviour
         if (_currentHealth <= 0)
         {
             OnDie?.Invoke();
+            GameManager.Instance.CommentartPanel.SetActive(false);
             _animator.SetTrigger(hashDie);
         }
 

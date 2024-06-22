@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4144edfcae862784c8eb856d568fbd7d
+guid: 8535b98dbb62cf24eb926ec4accb86b0
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,85 +110,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Monster1_Idle_0
+      name: Monster2_Death_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 48
-        height: 40
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2261d6143765ea246a08f76c87f0cb11
-      internalID: 1795916559
+      spriteID: e4732caae68d989418d44cdb9506f339
+      internalID: -901590212
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Monster1_Idle_1
+      name: Monster2_Death_1
       rect:
         serializedVersion: 2
-        x: 48
+        x: 64
         y: 0
-        width: 47
-        height: 40
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1e7aa44d697eec4c84a94047197ee80
-      internalID: -1966389889
+      spriteID: df7cc970f99242840bf739b5a9d1e721
+      internalID: 1230861628
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Monster1_Idle_2
+      name: Monster2_Death_2
       rect:
         serializedVersion: 2
-        x: 96
+        x: 128
         y: 0
-        width: 48
-        height: 40
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c27178d8a373f8148b23201baaf63b00
-      internalID: 834010068
+      spriteID: 7d2e4f54bf289584497e43ccc50f3d6a
+      internalID: -942474584
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Monster1_Idle_3
+      name: Monster2_Death_3
       rect:
         serializedVersion: 2
-        x: 144
+        x: 192
         y: 0
-        width: 48
-        height: 40
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c4e04639fa5c734ca4c0516fd2bbf56
-      internalID: -679440222
+      spriteID: ff244fb572fcd05459bfabc46b80b6c8
+      internalID: 2146344875
       vertices: []
       indices: 
       edges: []
@@ -204,10 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Monster1_Idle_0: 1795916559
-      Monster1_Idle_1: -1966389889
-      Monster1_Idle_2: 834010068
-      Monster1_Idle_3: -679440222
+      Monster2_Death_0: -901590212
+      Monster2_Death_1: 1230861628
+      Monster2_Death_2: -942474584
+      Monster2_Death_3: 2146344875
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

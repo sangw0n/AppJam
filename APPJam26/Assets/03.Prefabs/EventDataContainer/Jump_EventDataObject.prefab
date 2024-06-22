@@ -45,7 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _weight: 1
-  _commentary: 
+  _commentary:
+  - "\uC5D0\uB77C\uC787 \uACF5\uACA9"
 --- !u!1 &7318200667229309041
 GameObject:
   m_ObjectHideFlags: 0

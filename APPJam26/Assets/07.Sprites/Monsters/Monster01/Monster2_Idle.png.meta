@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4144edfcae862784c8eb856d568fbd7d
+guid: 4620aaa02a4e6d048b2ee402a7da67a7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,85 +110,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Monster1_Idle_0
+      name: Monster2_Idle_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 5
         y: 0
-        width: 48
-        height: 40
+        width: 39
+        height: 41
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2261d6143765ea246a08f76c87f0cb11
-      internalID: 1795916559
+      spriteID: 0e415c56534e69945bedecea2c9ca2d1
+      internalID: -1048801578
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Monster1_Idle_1
+      name: Monster2_Idle_1
       rect:
         serializedVersion: 2
-        x: 48
+        x: 68
         y: 0
-        width: 47
-        height: 40
+        width: 39
+        height: 41
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1e7aa44d697eec4c84a94047197ee80
-      internalID: -1966389889
+      spriteID: c65818d758d11824190bbb41ca7b7187
+      internalID: -532362872
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Monster1_Idle_2
+      name: Monster2_Idle_2
       rect:
         serializedVersion: 2
-        x: 96
+        x: 131
         y: 0
-        width: 48
-        height: 40
+        width: 39
+        height: 41
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c27178d8a373f8148b23201baaf63b00
-      internalID: 834010068
+      spriteID: f5bf0051efbf6694ca245429c1b9dc2e
+      internalID: -273223363
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Monster1_Idle_3
+      name: Monster2_Idle_3
       rect:
         serializedVersion: 2
-        x: 144
+        x: 197
         y: 0
-        width: 48
-        height: 40
+        width: 39
+        height: 41
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c4e04639fa5c734ca4c0516fd2bbf56
-      internalID: -679440222
+      spriteID: 5bf57ca881164264d9d5f2f392e3e36e
+      internalID: 1854217665
       vertices: []
       indices: 
       edges: []
@@ -204,10 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Monster1_Idle_0: 1795916559
-      Monster1_Idle_1: -1966389889
-      Monster1_Idle_2: 834010068
-      Monster1_Idle_3: -679440222
+      Monster2_Idle_0: -1048801578
+      Monster2_Idle_1: -532362872
+      Monster2_Idle_2: -273223363
+      Monster2_Idle_3: 1854217665
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

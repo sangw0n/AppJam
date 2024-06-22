@@ -9,7 +9,7 @@ public abstract class UnitEvent : MonoBehaviour
     public int Weight => _weight;
     
     [SerializeField]
-    private string _commentary;
+    protected string[] _commentary;
     protected Unit _myUnit;
 
     public void SetOwner(Unit owner)
