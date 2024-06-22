@@ -34,9 +34,9 @@ public class Unit : MonoBehaviour
     private Unit _opponentUnit;
     public Unit OpponentUnit => _opponentUnit;
 
-    [SerializeField]
     private List<BattleEventData> _unitEventDatas = new List<BattleEventData>();
     private Dictionary<Turn, List<UnitEvent>> _unitEventDictionary;
+    private UnitEventDataObject _unitEventObject;
 
     public void Init()
     {
@@ -68,9 +68,12 @@ public class Unit : MonoBehaviour
 
     public void SetUnitData(UnitData unitData)
     {
-
         // Get Value
         _unitData = unitData;
+
+        // eventData
+        _unitEventObject = Instantiate(_unitData.EventData, transform);
+        _unitEventDatas = _unitEventObject.UnitEventDatas;
 
         // Set Value
         _unitSprite.sprite = _unitData.UnitSprite;

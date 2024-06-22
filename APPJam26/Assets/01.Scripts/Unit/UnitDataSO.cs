@@ -11,6 +11,7 @@ public struct UnitData
     public Sprite UnitSprite;
     public int MaxHealth;
     public int Strength;
+    public UnitEventDataObject EventData;
 
 }
 
