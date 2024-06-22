@@ -3695,7 +3695,6 @@ MonoBehaviour:
   RewardPanel: {fileID: 1383977260}
   CommentartPanel: {fileID: 62780931}
   textCommentary: {fileID: 1064191650}
-  typewriterByCharacter: {fileID: 1064191648}
   _playerUnit: {fileID: 187187462}
   _enemyUnit: {fileID: 231120296}
 --- !u!4 &726923517
@@ -5043,8 +5042,6 @@ GameObject:
   - component: {fileID: 1064191646}
   - component: {fileID: 1064191651}
   - component: {fileID: 1064191650}
-  - component: {fileID: 1064191649}
-  - component: {fileID: 1064191648}
   - component: {fileID: 1064191647}
   m_Layer: 0
   m_Name: TextCommentary
@@ -5086,80 +5083,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 2
   m_VerticalFit: 2
---- !u!114 &1064191648
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1064191645}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57a6945b90dcd0c4b81619c0d8b5c283, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  useTypeWriter: 1
-  startTypewriterMode: 2
-  hideAppearancesOnSkip: 0
-  hideDisappearancesOnSkip: 1
-  triggerEventsOnSkip: 0
-  resetTypingSpeedAtStartup: 1
-  disappearanceOrientation: 0
-  onTextShowed:
-    m_PersistentCalls:
-      m_Calls: []
-  onTypewriterStart:
-    m_PersistentCalls:
-      m_Calls: []
-  onTextDisappeared:
-    m_PersistentCalls:
-      m_Calls: []
-  onCharacterVisible:
-    m_PersistentCalls:
-      m_Calls: []
-  onMessage:
-    m_PersistentCalls:
-      m_Calls: []
-  waitForNormalChars: 0.03
-  waitLong: 0.03
-  waitMiddle: 0.03
-  avoidMultiplePunctuactionWait: 0
-  waitForNewLines: 1
-  waitForLastCharacter: 1
-  useTypewriterWaitForDisappearances: 1
-  disappearanceWaitTime: 0.015
-  disappearanceSpeedMultiplier: 1
---- !u!114 &1064191649
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1064191645}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8ace8ced0e81c847968cdca0aeda757, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  typewriterStartsAutomatically: 1
-  animationLoop: 0
-  timeScale: 0
-  _text: 
-  useDynamicScaling: 1
-  referenceFontSize: 10
-  isResettingTimeOnNewText: 1
-  useDefaultDatabases: 1
-  databaseBehaviors: {fileID: 11400000, guid: 699bfd7fddc9ab348baa1a27076e9a67, type: 2}
-  databaseAppearances: {fileID: 11400000, guid: 512e6b164f6a1aa408dc7132791a68ad, type: 2}
-  useDefaultStyleSheet: 1
-  styleSheet: {fileID: 0}
-  databaseActions: {fileID: 11400000, guid: 56b161fb8446b1d4f9439f885d0bdf48, type: 2}
-  defaultAppearancesTags:
-  - fade
-  defaultDisappearancesTags: []
-  defaultBehaviorsTags:
-  - fade
-  defaultTagsMode: 0
 --- !u!114 &1064191650
 MonoBehaviour:
   m_ObjectHideFlags: 0

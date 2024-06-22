@@ -20,6 +20,9 @@ public class UnitRangeAttackEvent : UnitEvent
 
     public override void InvokeEvent()
     {
+        int index = Random.Range(0, _commentary.Length);
+        StartCoroutine(GameManager.Instance.Co_InputText(_commentary[index]));
+
         Vector3    targetDirection     = (_myUnit.OpponentUnit.transform.position - transform.position).normalized;
         GameObject clone               = Instantiate(bulletPrefab, _myUnit.transform.position + firePosOffet, Quaternion.identity);
         Bullet     bullet              = clone.GetComponent<Bullet>();

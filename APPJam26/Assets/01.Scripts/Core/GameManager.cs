@@ -4,6 +4,7 @@ using Febucci.UI;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -62,9 +63,6 @@ public class GameManager : MonoSingleton<GameManager>
     [Header("Commentary Info ")]
     [SerializeField]
     private TextMeshProUGUI textCommentary;
-    [SerializeField]
-    private TypewriterByCharacter typewriterByCharacter;
-
 
     public float CurrentBettingPer => _currentBettingPer;
     public int BettingGold => _bettingGold;
@@ -73,7 +71,7 @@ public class GameManager : MonoSingleton<GameManager>
     private void GameStart()
     {
 
-        // º»ÀÎ À¯´Ö ¼±ÅÃ
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         SelectUnitPanel.SetActive(true);
         OutBounceAnimationPanel(SelectUnitPanel);
 
@@ -197,7 +195,7 @@ public class GameManager : MonoSingleton<GameManager>
     private void GameEnd()
     {
 
-        // ´©°¡ Á×¾ú´Â°¡ Ã¼Å©
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½×¾ï¿½ï¿½Â°ï¿½ Ã¼Å©
         _isPlayerWin = _playerUnit.UnitHP.CurrentHealth > 0;
 
         RewardPanel.SetActive(true);
@@ -286,8 +284,17 @@ public class GameManager : MonoSingleton<GameManager>
         VCamPerlin.m_FrequencyGain = 0f;
     }
 
-    public void TriggerCommentary(TextMeshProUGUI text, float duration)
+    public IEnumerator Co_InputText(string text)
     {
+        textCommentary.text = string.Empty;
 
+        StringBuilder stringBuilder = new StringBuilder();
+
+        for (int i = 0; i < text.Length; i++)
+        {
+            stringBuilder.Append(text[i]);
+            textCommentary.text = stringBuilder.ToString();
+            yield return new WaitForSeconds(0.05f);
+        }
     }
 }
