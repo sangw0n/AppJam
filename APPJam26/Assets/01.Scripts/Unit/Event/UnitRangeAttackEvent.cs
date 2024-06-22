@@ -15,17 +15,17 @@ public class UnitRangeAttackEvent : UnitEvent
 
     public override void Init()
     {
-        isEnd = true;
+        isEnd = false;
     }
 
     public override void InvokeEvent()
     {
         Vector3    targetDirection     = (_myUnit.OpponentUnit.transform.position - transform.position).normalized;
-        GameObject clone               = Instantiate(bulletPrefab, transform.position + firePosOffet, Quaternion.identity);
+        GameObject clone               = Instantiate(bulletPrefab, _myUnit.transform.position + firePosOffet, Quaternion.identity);
         Bullet     bullet              = clone.GetComponent<Bullet>();
         // 애니메이션 재생 
 
-        bullet.Initialized(this, targetDirection);
+        bullet.Initialized(this, _myUnit, targetDirection);
     }
 
     public override bool IsEnd()

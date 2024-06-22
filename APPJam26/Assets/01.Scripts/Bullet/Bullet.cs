@@ -4,42 +4,63 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField, Range(0.0f, 1.0f)]
+    [SerializeField]
     private float       moveSpeed;
-    private Vector2     direction;
+    private Vector3     direction;
     private bool        isHit = false;
+    private Unit        myUnit;
 
     private Rigidbody2D          rigid;
+    private SpriteRenderer       spriteRenderer;
     private UnitRangeAttackEvent unitRangeAttackEvent;
-
-    public bool         IsHit => isHit;
 
     private void Start()
     {
-        rigid = GetComponent<Rigidbody2D>();
+        rigid          = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
+        CheckDistanceFromEnemy();
         Move();
     }
 
-    public void Initialized(UnitRangeAttackEvent unitRangeAttackEvent, Vector2 direction)
+    public void Initialized(UnitRangeAttackEvent unitRangeAttackEvent, Unit myUnit, Vector3 direction)
     {
-        this.unitRangeAttackEvent = unitRangeAttackEvent;
-        this.direction = direction;
+        this.unitRangeAttackEvent   = unitRangeAttackEvent;
+        this.myUnit                 = myUnit;
+        this.direction              = direction;
     }
 
     private void Move()
     {
-        rigid.MovePosition(rigid.position + (moveSpeed * direction));
+        transform.position += moveSpeed * direction * Time.deltaTime;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private Color color = new Color(0, 0, 0, 0);
+    private void CheckDistanceFromEnemy()
     {
-        // 적이 맞으면 파티클 발생
+        if (isHit) return;
 
-        // 적 피격 
+        if (Vector3.Distance(myUnit.OpponentUnit.transform.position, transform.position) < 1.0f + (moveSpeed * 0.2f))
+        {
+            isHit = true;
+
+            myUnit.OpponentUnit.HitDamage(myUnit.UnitData.Strength);
+
+            spriteRenderer.color = color;
+
+            StartCoroutine(Co_IsHit());
+        }
+    }
+
+    private WaitForSeconds waitForSeconds00 = new WaitForSeconds(0.4f);
+    private IEnumerator Co_IsHit()
+    {
+        yield return waitForSeconds00;
+
         unitRangeAttackEvent.SetIsEnd(true);
+        Destroy(gameObject);
     }
 }
