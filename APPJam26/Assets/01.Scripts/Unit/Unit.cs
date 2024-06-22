@@ -25,7 +25,7 @@ public class Unit : MonoBehaviour
 
     // Get
     public HealthPoint UnitHP => _health;
-    public UnitData UnitData => _unitData;
+    public UnitData UnitData { get { return _unitData; } set { _unitData = value; } }
 
     [Header("Info")]
     [SerializeField]
@@ -50,6 +50,7 @@ public class Unit : MonoBehaviour
         
         _health.AddValue(-value);
         StartCoroutine(HitDamageCoroutine());
+        GameManager.Instance.CameraShake(0.1f);
 
     }
 

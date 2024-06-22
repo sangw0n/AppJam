@@ -30,7 +30,8 @@ public class UnitJumpEvent : UnitEvent
 
         Vector3 startPos = unitTrm.position;
 
-        unitTrm.DOJump(opponentTrm.position, 3, 1, 0.5f).SetEase(Ease.InQuad);
+        unitTrm.position = startPos;
+        unitTrm.DOJump(opponentTrm.position, 2, 1, 0.4f).SetEase(Ease.InQuad);
 
         yield return _wait05;
 

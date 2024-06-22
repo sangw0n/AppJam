@@ -45,7 +45,7 @@ public class SelectEnemyUI : MonoBehaviour
 
             // Betting Per
             float unitPower = (unitData.Strength * 2 + unitData.MaxHealth);
-            float bettingPer = 1.5f + Mathf.Clamp((Mathf.Round((unitPower - GameManager.Instance.PlayerUnitPower) * 0.1f) * 0.1f), 0.1f, 5f);
+            float bettingPer = 1.00f + Mathf.Clamp((Mathf.Round(0.5f + (unitPower - GameManager.Instance.PlayerUnitPower) * 0.1f) * 0.1f), 0.1f, 5f);
 
             _cardBettingPer.Add(bettingPer);
             _bettingPer[i].text = $"∫£∆√¿≤ : {bettingPer}x";

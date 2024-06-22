@@ -1,3 +1,4 @@
+using Cinemachine;
 using DG.Tweening;
 using System;
 using System.Collections;
@@ -19,7 +20,8 @@ public enum GameState
     Start,
     Setting,
     Battle,
-    GameEnd
+    GameEnd,
+    Shop
 
 }
 
@@ -37,8 +39,13 @@ public class GameManager : MonoSingleton<GameManager>
     public Dictionary<GameState, Action> GameStateEvent;
     public Dictionary<Turn, Action> GameTurnEvent;
 
+    [Header("Camera")]
+    public CinemachineVirtualCamera VCam;
+    private CinemachineBasicMultiChannelPerlin VCamPerlin;
+
     [Header("UI")]
     public GameObject SelectUnitPanel;
+    public GameObject ShopPanel;
     public GameObject SelectEnemyPanel;
     public GameObject BettingPanel;
     public GameObject RewardPanel;
@@ -67,7 +74,7 @@ public class GameManager : MonoSingleton<GameManager>
     private void GameSetting()
     {
 
-        _playerUnit.UnitHP.AddValue(9999);
+        _playerUnit.UnitHP.AddValue(999);
 
         // Setting
         SelectEnemyPanel.SetActive(true);
@@ -188,6 +195,20 @@ public class GameManager : MonoSingleton<GameManager>
 
     #endregion
 
+    #region Game_GameShop
+
+    private void GameShop()
+    {
+
+        ShopPanel.SetActive(true);
+        OutBounceAnimationPanel(ShopPanel);
+
+    }
+
+
+
+    #endregion
+
     private void Start()
     {
         if (instance == null)
@@ -213,6 +234,8 @@ public class GameManager : MonoSingleton<GameManager>
         _enemyUnit.Init();
         _money = Money.Instance;
 
+        VCamPerlin = VCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+
         _playerUnit.UnitHP.OnDie += BattleEndEvent;
         _enemyUnit.UnitHP.OnDie += BattleEndEvent;
 
@@ -222,6 +245,7 @@ public class GameManager : MonoSingleton<GameManager>
             { GameState.Setting,    GameSetting },
             { GameState.Battle,     GameBattle },
             { GameState.GameEnd,    GameEnd },
+            { GameState.Shop,       GameShop },
         };
 
         ChangeGameState(GameState.Start);
@@ -236,6 +260,18 @@ public class GameManager : MonoSingleton<GameManager>
 
     }
 
+    public void CameraShake(float time)
+    {
+        StartCoroutine(CameraShakeCo(time));
+    }
 
+    IEnumerator CameraShakeCo(float time)
+    {
+        VCamPerlin.m_AmplitudeGain = 4f;
+        VCamPerlin.m_FrequencyGain = 4f;
+        yield return new WaitForSeconds(time);
+        VCamPerlin.m_AmplitudeGain = 0f;
+        VCamPerlin.m_FrequencyGain = 0f;
+    }
 
 }

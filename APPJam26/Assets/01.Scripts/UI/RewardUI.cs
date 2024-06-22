@@ -53,7 +53,7 @@ public class RewardUI : MonoBehaviour
     {
 
         gameObject.SetActive(false);
-        GameManager.Instance.ChangeGameState(GameState.Setting);
+        GameManager.Instance.ChangeGameState(GameState.Shop);
 
     }
 

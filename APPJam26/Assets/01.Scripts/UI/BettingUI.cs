@@ -15,6 +15,7 @@ public class BettingUI : MonoBehaviour
     {
 
         _currentGoldText.text = $"¼ÒÁö±Ý : {Money.Instance.CurrentGold} G";
+        ClampValue();
 
     }
 
@@ -33,13 +34,13 @@ public class BettingUI : MonoBehaviour
         if (string.IsNullOrEmpty(_bettingField.text)
             || _bettingField.text == "-")
         {
-            _bettingField.text = "0";
+            _bettingField.text = "100";
         }
 
         try
         {
             int value = int.Parse(_bettingField.text);
-            value = Mathf.Clamp(value, 0, Money.Instance.CurrentGold);
+            value = Mathf.Clamp(value, 100, Money.Instance.CurrentGold);
 
             _bettingField.text = value.ToString();
         }
