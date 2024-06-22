@@ -33,11 +33,15 @@ public class UnitSpikeBulletEvent : UnitEvent
         Vector3 myUnitPos = _myUnit.transform.position;
         float dist = Vector3.Distance(myUnitPos, _myUnit.OpponentUnit.transform.position);
 
+
         for(int j = 0; j < _count; j++)
         {
 
             for (int i = 0; i < 5; ++i)
             {
+                _myUnit.Animator.SetTrigger(_myUnit.HASH_ATTACK);
+
+
                 // -180도 기준으로 0도까지 5개의 탄환 { -90, -45, 0, 45, 90 }
                 float angle = (180f - (i * 45f)) * Mathf.Deg2Rad;
                 Vector3 dir = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0f);
