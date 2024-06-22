@@ -3686,7 +3686,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9a024f8651bc8b345b71a50c2e2d8bf1, type: 2}
   - {fileID: 11400000, guid: 03062ee74c79dd44a9af9bd9b3ac5300, type: 2}
   - {fileID: 11400000, guid: e8fc8256851f0774496ddcac0025aa0e, type: 2}
-  - {fileID: 11400000, guid: 7dd1c47c7ecee714884051544bd5de20, type: 2}
+  BossUnitData: {fileID: 11400000, guid: 7dd1c47c7ecee714884051544bd5de20, type: 2}
   VCam: {fileID: 1521300058}
   SelectUnitPanel: {fileID: 1834399291}
   ShopPanel: {fileID: 10667550}
