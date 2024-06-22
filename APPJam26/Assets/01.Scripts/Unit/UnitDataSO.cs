@@ -10,6 +10,7 @@ public struct UnitData
     public string UnitName;
     public string UnitDescription;
     public Sprite UnitSprite;
+    public Sprite UnitUISprite;
     public int MaxHealth;
     public int Strength;
     public UnitEventDataObject EventData;
