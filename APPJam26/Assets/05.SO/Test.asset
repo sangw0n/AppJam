@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyUnitData:
     UnitName: Test
-    UnitDescription: "\uD14C\uC2A4\uD2B8\uC6A9\uC785\uB2C8"
+    UnitDescription: "\uD14C\uC2A4\uD2B8\uC6A9\uC785\uB2C8\uB2E4"
     UnitSprite: {fileID: -1646661459, guid: b490dad17ebe1e84eb9c9c73e5b6e2c6, type: 3}
+    UnitUISprite: {fileID: 0}
     MaxHealth: 120
     Strength: 40
     EventData: {fileID: 698350497742135828, guid: 5fd96df0520698c409732938a64889e8, type: 3}
