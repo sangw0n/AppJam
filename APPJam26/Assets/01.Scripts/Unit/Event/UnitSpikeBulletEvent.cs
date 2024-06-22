@@ -10,6 +10,9 @@ public class UnitSpikeBulletEvent : UnitEvent
     List<GameObject> _spikeObjList = new List<GameObject>();
     private bool _isEnd = false;
 
+    [SerializeField]
+    private int _count = 1;
+
     public override void Init()
     {
         _isEnd = false;
@@ -30,23 +33,28 @@ public class UnitSpikeBulletEvent : UnitEvent
         Vector3 myUnitPos = _myUnit.transform.position;
         float dist = Vector3.Distance(myUnitPos, _myUnit.OpponentUnit.transform.position);
 
-        for(int i = 0; i < 5; ++i)
+        for(int j = 0; j < _count; j++)
         {
-            // -180도 기준으로 0도까지 5개의 탄환 { -90, -45, 0, 45, 90 }
-            float angle = (180f - (i * 45f)) * Mathf.Deg2Rad;
-            Vector3 dir = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0f);
 
-            GameObject spikeBullet = Instantiate(_spikeBulletPrefab, myUnitPos, Quaternion.identity);
-            spikeBullet.transform.right = dir;
+            for (int i = 0; i < 5; ++i)
+            {
+                // -180도 기준으로 0도까지 5개의 탄환 { -90, -45, 0, 45, 90 }
+                float angle = (180f - (i * 45f)) * Mathf.Deg2Rad;
+                Vector3 dir = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0f);
 
-            spikeBullet.transform.DOMove(myUnitPos + dir * dist, 0.4f).SetEase(Ease.OutCubic);
-            _spikeObjList.Add(spikeBullet);
+                GameObject spikeBullet = Instantiate(_spikeBulletPrefab, myUnitPos, Quaternion.identity);
+                spikeBullet.transform.right = dir;
+
+                spikeBullet.transform.DOMove(myUnitPos + dir * dist, 0.4f).SetEase(Ease.OutCubic);
+                _spikeObjList.Add(spikeBullet);
+            }
+
+            yield return wait021;
+            _spikeObjList.ForEach(e => Destroy(e));
+            _spikeObjList.Clear();
+            _myUnit.OpponentUnit.HitDamage(_myUnit.UnitData.Strength);
+
         }
-
-        yield return wait021;
-        _spikeObjList.ForEach(e => Destroy(e));
-        _spikeObjList.Clear();
-        _myUnit.OpponentUnit.HitDamage(_myUnit.UnitData.Strength);
 
         yield return wait021;
         _isEnd = true;

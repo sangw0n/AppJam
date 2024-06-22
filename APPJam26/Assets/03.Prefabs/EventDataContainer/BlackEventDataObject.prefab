@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &404224618703430730
+--- !u!1 &1439443511005109350
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8072530381928522615}
-  - component: {fileID: 6403416997938894320}
+  - component: {fileID: 3049828178426797645}
+  - component: {fileID: 959154878552123364}
   m_Layer: 0
-  m_Name: 5Thron
+  m_Name: Melee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8072530381928522615
+--- !u!4 &3049828178426797645
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 404224618703430730}
+  m_GameObject: {fileID: 1439443511005109350}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -32,25 +32,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7742632257510564580}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6403416997938894320
+--- !u!114 &959154878552123364
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 404224618703430730}
+  m_GameObject: {fileID: 1439443511005109350}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f962af91eea3ed446bbd0f2c2cb455ef, type: 3}
+  m_Script: {fileID: 11500000, guid: 47743884ef25eee4a8385ca12aac20b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _weight: 1
   _commentary:
-  - "\uC5C4\uCCAD\uB09C \uC5F0\uACA9\uC785\uB2C8\uB2E4!!!"
-  - "\uAD49\uC7A5\uD569\uB2C8\uB2E4! \uB610\uB86F\uCE58!"
-  _spikeBulletPrefab: {fileID: 9187887592104341775, guid: addb022e6aab3e142a49252aacb1ec16, type: 3}
-  _count: 5
---- !u!1 &1332404286299097135
+  - "\uC544 \uAC80\uB465\uC774\uAC00 \uACF5\uACA9\uD569\uB2C8\uB2E4!!"
+  - "\uACF5\uACA9\uC744!! \uD588\uC5B4\uC694!!"
+  offsetDistanceFromEnemy: {x: 1, y: 0, z: 0}
+  moveSpeed: 0.5
+--- !u!1 &2412690502195328730
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -58,8 +58,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3549309780630296307}
-  - component: {fileID: 1675487437280004157}
+  - component: {fileID: 6500104194613232142}
+  - component: {fileID: 1075318263286573470}
   m_Layer: 0
   m_Name: Bothering
   m_TagString: Untagged
@@ -67,13 +67,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3549309780630296307
+--- !u!4 &6500104194613232142
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1332404286299097135}
+  m_GameObject: {fileID: 2412690502195328730}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -82,22 +82,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7742632257510564580}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1675487437280004157
+--- !u!114 &1075318263286573470
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1332404286299097135}
+  m_GameObject: {fileID: 2412690502195328730}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 842945480f09d5749b8615ac36203b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _weight: 1
+  _weight: 9
   _commentary:
-  - "\uB610\uB86F\uCE58\uAC00 \uADC0\uCC2E\uC740\uAC00 \uBCF4\uB124\uC694"
-  - "\uB610\uB86F\uCE58 \uBA38\uD558\uB098\uC694~"
+  - "\uC81C\uBC1C! \uACF5\uACA9 \uC880! \uD574\uB77C! \uAC80\uB465\uC544!"
+  - "\uACF5\uACA9\uC744 \uC548 \uD574\uC694~"
+  - "\uADC0\uCC2E\uC740\uAC00 \uBCF4\uB124\uC694~"
+  - ...
+  - "\uBA38\uD558\uB294 \uAC74\uAC00\uC694~"
+  - "\uAC80\uB465\uC774 \uC2F8\uC6B8 \uC0DD\uAC01\uC774 \uC5C6\uC5B4\uC694~!"
 --- !u!1 &7318200667229309041
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,7 +113,7 @@ GameObject:
   - component: {fileID: 7742632257510564580}
   - component: {fileID: 698350497742135828}
   m_Layer: 0
-  m_Name: Thron_EventDataObject
+  m_Name: BlackEventDataObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -128,9 +132,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3833991003447763601}
-  - {fileID: 8072530381928522615}
-  - {fileID: 3549309780630296307}
+  - {fileID: 3049828178426797645}
+  - {fileID: 6500104194613232142}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &698350497742135828
@@ -147,58 +150,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _unitEventDatas:
   - ActivatedGameState: 2
-    UnitGameEvent: {fileID: 7815482896551254742}
+    UnitGameEvent: {fileID: 959154878552123364}
   - ActivatedGameState: 2
-    UnitGameEvent: {fileID: 6403416997938894320}
-  - ActivatedGameState: 2
-    UnitGameEvent: {fileID: 1675487437280004157}
---- !u!1 &7348733691220768137
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3833991003447763601}
-  - component: {fileID: 7815482896551254742}
-  m_Layer: 0
-  m_Name: Thron
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3833991003447763601
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7348733691220768137}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7742632257510564580}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7815482896551254742
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7348733691220768137}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f962af91eea3ed446bbd0f2c2cb455ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _weight: 8
-  _commentary:
-  - "\uB610\uB86F\uCE58\uAC00 \uAC00\uC2DC\uB97C \uBC1C\uC0AC\uD569\uB2C8\uB2E4!"
-  - "\uAC00\uC2DC\uB97C \uBC1C\uC0AC\uD558\uB124\uC694"
-  _spikeBulletPrefab: {fileID: 9187887592104341775, guid: addb022e6aab3e142a49252aacb1ec16, type: 3}
-  _count: 1
+    UnitGameEvent: {fileID: 1075318263286573470}
