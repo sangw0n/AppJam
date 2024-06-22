@@ -12,6 +12,9 @@ public abstract class UnitEvent : MonoBehaviour
         _myUnit = owner;
     }
 
+    public abstract void Init();
     public abstract void InvokeEvent();
+    public abstract bool IsEnd();
+
 
 }

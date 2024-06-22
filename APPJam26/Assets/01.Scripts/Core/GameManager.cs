@@ -39,6 +39,7 @@ public class GameManager : MonoSingleton<GameManager>
 
         // 본인 유닛 선택
 
+
     }
 
     #endregion
@@ -47,13 +48,31 @@ public class GameManager : MonoSingleton<GameManager>
     private void GameSetting()
     {
 
+        // Setting
+
     }
 
     #endregion
 
     #region Game_BattleStateValue
+    [Header("GameBattle Info")]
+    [SerializeField] private Unit _playerUnit;
+    [SerializeField] private Unit _enemyUnit;
+
+    private bool _isBattleEnd = false;
+
     private void GameBattle()
     {
+
+        // Turn
+
+    }
+
+    private void BattleEndEvent()
+    {
+
+        _isBattleEnd = true;
+        ChangeGameState(GameState.GameEnd);
 
     }
 
