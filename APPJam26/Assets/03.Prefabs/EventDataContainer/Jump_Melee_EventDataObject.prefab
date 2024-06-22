@@ -45,7 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _weight: 1
-  _commentary: 
+  _commentary:
+  - "\uC5D0\uB77C\uC787 \uACF5\uACA9"
   offsetDistanceFromEnemy: {x: 1, y: 1, z: 0}
   moveSpeed: 0.5
 --- !u!1 &3636487682779852963
@@ -93,7 +94,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _weight: 1
-  _commentary: 
+  _commentary:
+  - "\uC5D0\uB77C\uC787 \uACF5\uACA9"
 --- !u!1 &7318200667229309041
 GameObject:
   m_ObjectHideFlags: 0

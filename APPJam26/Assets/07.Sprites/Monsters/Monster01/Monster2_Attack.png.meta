@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4144edfcae862784c8eb856d568fbd7d
+guid: f86aada58171f7f4b978bcb6f8e8fb3a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,85 +110,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Monster1_Idle_0
+      name: Monster2_Attack_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 48
-        height: 40
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.4, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2261d6143765ea246a08f76c87f0cb11
-      internalID: 1795916559
+      spriteID: 8345494659d301a4aad8e2e42b0d674e
+      internalID: -1246137899
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Monster1_Idle_1
+      name: Monster2_Attack_1
       rect:
         serializedVersion: 2
-        x: 48
+        x: 64
         y: 0
-        width: 47
-        height: 40
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.4, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1e7aa44d697eec4c84a94047197ee80
-      internalID: -1966389889
+      spriteID: 3d3b8a97baf5b654dbd18b05d182616b
+      internalID: 872131712
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Monster1_Idle_2
+      name: Monster2_Attack_2
       rect:
         serializedVersion: 2
-        x: 96
+        x: 128
         y: 0
-        width: 48
-        height: 40
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.4, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c27178d8a373f8148b23201baaf63b00
-      internalID: 834010068
+      spriteID: c69c65397b85a794fa26fca1b8490cb8
+      internalID: 800040043
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Monster1_Idle_3
+      name: Monster2_Attack_3
       rect:
         serializedVersion: 2
-        x: 144
+        x: 192
         y: 0
-        width: 48
-        height: 40
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.4, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c4e04639fa5c734ca4c0516fd2bbf56
-      internalID: -679440222
+      spriteID: 413a882aad01ddf46ac81eaedb00feae
+      internalID: -498471459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Monster2_Attack_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.4, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e06386c0c41ac548a67805871c31447
+      internalID: -875872014
       vertices: []
       indices: 
       edges: []
@@ -204,10 +225,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Monster1_Idle_0: 1795916559
-      Monster1_Idle_1: -1966389889
-      Monster1_Idle_2: 834010068
-      Monster1_Idle_3: -679440222
+      Monster2_Attack_0: -1246137899
+      Monster2_Attack_1: 872131712
+      Monster2_Attack_2: 800040043
+      Monster2_Attack_3: -498471459
+      Monster2_Attack_4: -875872014
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

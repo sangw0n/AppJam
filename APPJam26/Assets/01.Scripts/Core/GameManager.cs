@@ -1,8 +1,11 @@
 using Cinemachine;
 using DG.Tweening;
+using Febucci.UI;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -49,6 +52,7 @@ public class GameManager : MonoSingleton<GameManager>
     public GameObject SelectEnemyPanel;
     public GameObject BettingPanel;
     public GameObject RewardPanel;
+    public GameObject CommentartPanel;
 
     public AudioSource UIClickSound;
     public AudioSource OpenPanelSound;
@@ -58,6 +62,13 @@ public class GameManager : MonoSingleton<GameManager>
     private int _bettingGold;
     private Money _money;
 
+    [Header("Commentary Info ")]
+    [SerializeField]
+    private TextMeshProUGUI textCommentary;
+    [SerializeField]
+    private TypewriterByCharacter typewriterByCharacter;
+
+
     public float CurrentBettingPer => _currentBettingPer;
     public int BettingGold => _bettingGold;
 
@@ -65,7 +76,7 @@ public class GameManager : MonoSingleton<GameManager>
     private void GameStart()
     {
 
-        // º»ÀÎ À¯´Ö ¼±ÅÃ
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         SelectUnitPanel.SetActive(true);
         OutBounceAnimationPanel(SelectUnitPanel);
 
@@ -101,6 +112,7 @@ public class GameManager : MonoSingleton<GameManager>
     [Header("GameBattle Info")]
     [SerializeField] private Unit _playerUnit;
     [SerializeField] private Unit _enemyUnit;
+
 
     public float PlayerUnitPower => (_playerUnit.UnitData.Strength * 2 + _playerUnit.UnitData.MaxHealth);
 
@@ -188,7 +200,7 @@ public class GameManager : MonoSingleton<GameManager>
     private void GameEnd()
     {
 
-        // ´©°¡ Á×¾ú´Â°¡ Ã¼Å©
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½×¾ï¿½ï¿½Â°ï¿½ Ã¼Å©
         _isPlayerWin = _playerUnit.UnitHP.CurrentHealth > 0;
 
         RewardPanel.SetActive(true);
@@ -284,4 +296,6 @@ public class GameManager : MonoSingleton<GameManager>
         UIClickSound.Play();
     }
 
+
+   
 }
