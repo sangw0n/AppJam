@@ -1,6 +1,5 @@
 
 using UnityEngine;
-using UnityEditor.Animations;
 
 [System.Serializable]
 public struct UnitData
@@ -14,7 +13,7 @@ public struct UnitData
     public int MaxHealth;
     public int Strength;
     public UnitEventDataObject EventData;
-    public AnimatorController UnitAnimController;
+    public RuntimeAnimatorController UnitAnimController;
 
 }
 

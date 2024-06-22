@@ -21,4 +21,4 @@ MonoBehaviour:
     MaxHealth: 200
     Strength: 20
     EventData: {fileID: 698350497742135828, guid: 3d673faaf46154443ac9e5cba978ce7d, type: 3}
-    AnimatorController: {fileID: 9100000, guid: 248c6314e3ae8794492e5445c4b908d7, type: 2}
+    UnitAnimController: {fileID: 9100000, guid: 248c6314e3ae8794492e5445c4b908d7, type: 2}
