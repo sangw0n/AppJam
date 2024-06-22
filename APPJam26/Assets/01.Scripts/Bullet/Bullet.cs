@@ -10,13 +10,11 @@ public class Bullet : MonoBehaviour
     private bool        isHit = false;
     private Unit        myUnit;
 
-    private Rigidbody2D          rigid;
     private SpriteRenderer       spriteRenderer;
     private UnitRangeAttackEvent unitRangeAttackEvent;
 
     private void Start()
     {
-        rigid          = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 

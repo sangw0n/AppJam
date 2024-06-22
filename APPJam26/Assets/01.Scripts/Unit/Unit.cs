@@ -27,11 +27,13 @@ public class Unit : MonoBehaviour
     private UnitData _unitData;
     private HealthPoint _health;
     private AudioSource _hitAudioSource;
+    private Transform _effectSpawnPos;
 
     // Get
     public HealthPoint UnitHP => _health;
     public UnitData UnitData { get { return _unitData; } set { _unitData = value; } }
     public Animator Animator => _animator;
+    public Transform EffectSpawnPos { get { return _effectSpawnPos; } set { _effectSpawnPos = value; } }
 
     [Header("Info")]
     [SerializeField]
@@ -39,6 +41,8 @@ public class Unit : MonoBehaviour
     [SerializeField]
     private Unit _opponentUnit;
     public Unit OpponentUnit => _opponentUnit;
+    [SerializeField]
+    public GameObject effectPrefab;
 
     private List<BattleEventData> _unitEventDatas = new List<BattleEventData>();
     private Dictionary<Turn, List<UnitEvent>> _unitEventDictionary;
@@ -50,13 +54,14 @@ public class Unit : MonoBehaviour
         _health = transform.Find("HP").GetComponent<HealthPoint>();
         _unitSprite = transform.Find("Visual").GetComponent<SpriteRenderer>();
         _animator = transform.Find("Visual").GetComponent<Animator>();
+        _effectSpawnPos = transform.Find("EffectSpawnPos").GetComponent<Transform>();
 
         _hitAudioSource = transform.Find("HitSound").GetComponent<AudioSource>();
     }
 
     public void HitDamage(int value)
     {
-        
+        Destroy(Instantiate(effectPrefab, EffectSpawnPos.position, Quaternion.identity), 1.0f);
         _hitAudioSource.Play();
         _health.AddValue(-value);
         StartCoroutine(HitDamageCoroutine());
