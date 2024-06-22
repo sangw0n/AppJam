@@ -8,12 +8,14 @@ public class UnitBossAttackEvent : UnitEvent
     [SerializeField]
     private float moveSpeed;
 
-    private readonly Vector3 mapCenterPos = new Vector3(6.0f, 0.0f, 0.0f);
+    private Transform mapCenterPos;
 
     private bool isEnd = false;
 
     public override void Init()
     {
+        mapCenterPos = GameManager.Instance.CenterPos;
+
         isEnd = false;
     }
 
@@ -27,18 +29,18 @@ public class UnitBossAttackEvent : UnitEvent
 
     private IEnumerator Co_Attack()
     {
-        Vector3 targetPos = transform.position + mapCenterPos;
         Vector3 orginPos = transform.position;
 
-        transform.DOMove(targetPos, moveSpeed);
+        _myUnit.transform.DOMove(mapCenterPos.position, moveSpeed);
 
-        yield return new WaitForSeconds(moveSpeed + 0.2f);
+        yield return new WaitForSeconds(moveSpeed + 0.1f);
 
         _myUnit.Animator.SetTrigger(_myUnit.HASH_ATTACK);
+        _myUnit.OpponentUnit.HitDamage(_myUnit.UnitData.Strength);
 
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.4f);
 
-        transform.DOMove(orginPos, moveSpeed);
+        _myUnit.transform.DOMove(orginPos, moveSpeed);
 
         yield return new WaitForSeconds(moveSpeed + 0.1f);
 

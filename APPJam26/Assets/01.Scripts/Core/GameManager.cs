@@ -71,6 +71,9 @@ public class GameManager : MonoSingleton<GameManager>
     [SerializeField]
     private TextMeshProUGUI textCommentary;
 
+    [Space(10)]
+    public Transform CenterPos;
+
     public float CurrentBettingPer => _currentBettingPer;
     public int BettingGold => _bettingGold;
 
