@@ -19,7 +19,7 @@ public class Unit : MonoBehaviour
     private readonly int HASH_BLINK = Shader.PropertyToID("_StrongTintFade");
     public readonly int HASH_ATTACK = Animator.StringToHash("OnAttack");
     public readonly int HASH_DIE    = Animator.StringToHash("OnDie");
-    public readonly int HASH_IDLE = Animator.StringToHash("OnIdle");
+    public readonly int HASH_IDLE =   Animator.StringToHash("OnIdle");
 
     // Info
     private SpriteRenderer _unitSprite;
@@ -84,8 +84,6 @@ public class Unit : MonoBehaviour
 
         // Set Value
         _unitSprite.sprite = _unitData.UnitSprite;
-        //_animator.SetTrigger(HASH_IDLE);
-        _animator.ResetTrigger(HASH_DIE);
         _animator.runtimeAnimatorController = _unitData.AnimatorController;
         _health.SetHealthInfo(_unitData.MaxHealth, _unitData.MaxHealth, _animator, HASH_DIE);
         _unitUI.SetName(_unitData.UnitName);
