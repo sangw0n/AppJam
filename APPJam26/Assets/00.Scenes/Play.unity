@@ -3784,17 +3784,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UnitDatas:
-  - {fileID: 11400000, guid: 2ffbe07e7aa1f3b4fadfcdab2372ede1, type: 2}
-  - {fileID: 11400000, guid: e0d985d7b7ff1654e8d5351e27537dc7, type: 2}
-  - {fileID: 11400000, guid: e4aafa80113fde747b4c64b53afaebc4, type: 2}
+  - {fileID: 11400000, guid: 93356042a3b6b7941ad752595554b78f, type: 2}
+  - {fileID: 11400000, guid: 9a024f8651bc8b345b71a50c2e2d8bf1, type: 2}
+  - {fileID: 11400000, guid: 03062ee74c79dd44a9af9bd9b3ac5300, type: 2}
+  - {fileID: 11400000, guid: e8fc8256851f0774496ddcac0025aa0e, type: 2}
+  - {fileID: 11400000, guid: 7dd1c47c7ecee714884051544bd5de20, type: 2}
   VCam: {fileID: 1521300058}
   SelectUnitPanel: {fileID: 1834399291}
   ShopPanel: {fileID: 10667550}
   SelectEnemyPanel: {fileID: 2057109868}
   BettingPanel: {fileID: 992324151}
   RewardPanel: {fileID: 1383977260}
+  CommentartPanel: {fileID: 0}
   UIClickSound: {fileID: 1006771938}
   OpenPanelSound: {fileID: 202812772}
+  textCommentary: {fileID: 0}
+  typewriterByCharacter: {fileID: 0}
   _playerUnit: {fileID: 187187462}
   _enemyUnit: {fileID: 231120296}
 --- !u!4 &726923517
