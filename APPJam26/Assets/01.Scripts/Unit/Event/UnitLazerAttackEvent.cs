@@ -23,6 +23,7 @@ public class UnitLazerAttackEvent : UnitEvent
     private Vector3 offset;
     private IEnumerator Attack()
     {
+        _myUnit.Animator.SetTrigger(_myUnit.HASH_ATTACK);
         GameObject cloneLazer = Instantiate(lazerPrefab, GameManager.Instance.CenterPos.transform.position - new Vector3(0.0f, 0.5f, 0.0f), Quaternion.identity);
 
         yield return new WaitForSeconds(0.2f);
