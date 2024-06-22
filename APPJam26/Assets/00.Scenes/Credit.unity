@@ -518,8 +518,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uD50C\uB808\uC774\uD574\uC8FC\uC154\uC11C \uAC10\uC0AC\uD569\uB2C8\uB2E4.\n\uC6B4\uC774
-    \uC88B\uC73C\uC2DC\uB124\uC694"
+  m_text: "\uCD5C\uC885 \uBCF4\uC2A4\uB97C \uD074\uB9AC\uC5B4\uD558\uC168\uC2B5\uB2C8\uB2E4.\n\n\uD50C\uB808\uC774\uD574\uC8FC\uC154\uC11C
+    \uAC10\uC0AC\uD569\uB2C8\uB2E4!\n<size=64>\uC6B4\uC774 \uCC38 \uC88B\uC73C\uC2DC\uAD70\uC694</size>"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ff2c7a4411680494d8fa9afe51ba5853, type: 2}
   m_sharedMaterial: {fileID: -7717036916500552226, guid: ff2c7a4411680494d8fa9afe51ba5853, type: 2}
@@ -554,7 +554,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
