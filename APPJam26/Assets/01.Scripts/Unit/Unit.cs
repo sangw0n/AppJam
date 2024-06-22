@@ -101,7 +101,10 @@ public class Unit : MonoBehaviour
         {
 
             e.UnitGameEvent.SetOwner(this);
-            _unitEventDictionary[e.ActivatedGameState].Add(e.UnitGameEvent);
+            for(int i = 0; i < e.UnitGameEvent.Weight; ++i)
+            {
+                _unitEventDictionary[e.ActivatedGameState].Add(e.UnitGameEvent);
+            }
 
         });
 

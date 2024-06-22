@@ -6,6 +6,8 @@ public abstract class UnitEvent : MonoBehaviour
 {
     [SerializeField]
     private   int _weight = 1;
+    public int Weight => _weight;
+    
     [SerializeField]
     private string _commentary;
     protected Unit _myUnit;
