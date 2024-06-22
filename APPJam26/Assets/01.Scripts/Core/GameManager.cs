@@ -33,6 +33,7 @@ public enum GameState
 public class GameManager : MonoSingleton<GameManager>
 {
     int _enemyCount = 0;
+    public int EnemyCount => _enemyCount;
 
     [Header("Game Info")]
     public List<UnitDataSO> UnitDatas;
@@ -217,16 +218,20 @@ public class GameManager : MonoSingleton<GameManager>
 
     private void GameEnd()
     {
+        _isPlayerWin = _playerUnit.UnitHP.CurrentHealth > 0;
+
         if(_enemyCount == 3)
         {
 
-            SceneManager.LoadScene(2);
+            if (_isPlayerWin)
+                SceneManager.LoadScene(2);
+            else
+                SceneManager.LoadScene(3);
             return;
 
         }
         _enemyCount++;
         
-        _isPlayerWin = _playerUnit.UnitHP.CurrentHealth > 0;
 
         RewardPanel.SetActive(true);
         OutBounceAnimationPanel(RewardPanel);

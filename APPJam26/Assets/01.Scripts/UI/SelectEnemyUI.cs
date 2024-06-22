@@ -41,6 +41,10 @@ public class SelectEnemyUI : MonoBehaviour
             int randomIndex = Random.Range(i, unitDatas.Count);
 
             UnitData unitData = unitDatas[randomIndex].MyUnitData;
+
+            unitData.Strength = Mathf.RoundToInt(unitData.Strength * (1 + GameManager.Instance.EnemyCount * 0.5f));
+            unitData.MaxHealth = Mathf.RoundToInt(unitData.MaxHealth * (1 + GameManager.Instance.EnemyCount * 0.5f));
+
             _cards[i].SetData(unitData);
 
             // Betting Per
@@ -62,6 +66,10 @@ public class SelectEnemyUI : MonoBehaviour
         // Betting Panel
         GameManager.Instance.BettingPanel.SetActive(true);
         GameManager.Instance.OutBounceAnimationPanel(GameManager.Instance.BettingPanel);
+
+        data.Strength = Mathf.RoundToInt(data.Strength * (1 + GameManager.Instance.EnemyCount * 0.5f));
+        data.MaxHealth = Mathf.RoundToInt(data.MaxHealth * (1 + GameManager.Instance.EnemyCount * 0.5f));
+
         _enemyUnit.SetUnitData(data);
 
         // 선택된 카드 인덱스

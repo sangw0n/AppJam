@@ -1,5 +1,55 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &715519518075808326
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2625252640210385090}
+  - component: {fileID: 5900882110425215740}
+  m_Layer: 0
+  m_Name: NormalAttack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2625252640210385090
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715519518075808326}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7742632257510564580}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5900882110425215740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715519518075808326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47743884ef25eee4a8385ca12aac20b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _weight: 2
+  _commentary:
+  - "\uBE68\uB77C\uC694~ \uB839\uBB38\uC5B4"
+  - "\uC5ED\uC2DC \uAC15\uD558\uB124\uC694~"
+  offsetDistanceFromEnemy: {x: 1, y: 0, z: 0}
+  moveSpeed: 0.5
 --- !u!1 &1439443511005109350
 GameObject:
   m_ObjectHideFlags: 0
@@ -46,7 +96,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weight: 1
   _commentary:
-  - "\uBCF4\uC2A4 \uC5B4\uD0DD ~~~~~"
+  - "\uC815\uB9D0 \uAD49\uC7A5\uD55C \uACF5\uACA9\uC785\uB2C8\uB2E4!"
+  - "\uAD49\uC7A5\uD569\uB2C8\uB2E4! \uB839\uBB38\uC5B4!"
   moveSpeed: 0.5
 --- !u!1 &7318200667229309041
 GameObject:
@@ -79,6 +130,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3049828178426797645}
+  - {fileID: 2625252640210385090}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &698350497742135828
@@ -96,3 +148,5 @@ MonoBehaviour:
   _unitEventDatas:
   - ActivatedGameState: 2
     UnitGameEvent: {fileID: 4322292588964050128}
+  - ActivatedGameState: 2
+    UnitGameEvent: {fileID: 5900882110425215740}

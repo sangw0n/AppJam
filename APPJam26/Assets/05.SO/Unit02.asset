@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyUnitData:
     UnitName: "\uB610\uB86F\uCE58"
-    UnitDescription: "\uAC00\uC2DC\uB2EC\uB9B0 \uAC1C\uCCB4"
+    UnitDescription: "\uAC00\uC2DC\uB97C \uBC1C\uC0AC\uD558\uB294 \uAC1C\uCCB4"
     UnitSprite: {fileID: -1048801578, guid: 4620aaa02a4e6d048b2ee402a7da67a7, type: 3}
     UnitUISprite: {fileID: 21300000, guid: 8f8984666d7429c48b811b81212ed99e, type: 3}
     UnitMouseOnUISprite: {fileID: 21300000, guid: aa14b935a7474f34d8e59774c72cd485, type: 3}
