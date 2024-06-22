@@ -101,6 +101,6 @@ public class Unit : MonoBehaviour
         });
 
     }
-
+    public List<UnitEvent> GetTurnEvent(Turn turn) => _unitEventDictionary[turn];
 
 }

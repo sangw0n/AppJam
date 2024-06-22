@@ -65,6 +65,25 @@ public class GameManager : MonoSingleton<GameManager>
     {
 
         // Turn
+        _currentTurn = Turn.Start;
+        StartCoroutine(BattleTurnLoopCoroutine());
+
+    }
+
+    int _currentTurnIndex = 0;
+    private Turn[] _turnFlow = { Turn.Start, Turn.PlayerTurn, Turn.Battle, Turn.End };
+
+    IEnumerator BattleTurnLoopCoroutine()
+    {
+
+        List<UnitEvent> playerUnitEvent = _playerUnit.GetTurnEvent(_currentTurn);
+        List<UnitEvent> enemyUnitEvent = _enemyUnit.GetTurnEvent(_currentTurn);
+
+
+
+
+        _currentTurnIndex = (_currentTurnIndex + 1) % 4;
+        _currentTurn = _turnFlow[_currentTurnIndex];
 
     }
 
