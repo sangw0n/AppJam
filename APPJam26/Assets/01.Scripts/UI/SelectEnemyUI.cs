@@ -61,6 +61,7 @@ public class SelectEnemyUI : MonoBehaviour
     {
         // Betting Panel
         GameManager.Instance.BettingPanel.SetActive(true);
+        GameManager.Instance.OutBounceAnimationPanel(GameManager.Instance.BettingPanel);
         _enemyUnit.SetUnitData(data);
 
         // 선택된 카드 인덱스

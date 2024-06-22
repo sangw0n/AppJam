@@ -16,6 +16,6 @@ MonoBehaviour:
     UnitName: Ell
     UnitDescription: "\uBAB0\uB77C\uC694"
     UnitSprite: {fileID: 1154600455, guid: b490dad17ebe1e84eb9c9c73e5b6e2c6, type: 3}
-    MaxHealth: 1000
-    Strength: 10
-    EventData: {fileID: 698350497742135828, guid: 5acb1afd0098e434186c3f79c3a13321, type: 3}
+    MaxHealth: 200
+    Strength: 30
+    EventData: {fileID: 698350497742135828, guid: 9a04c97da50bdce45840e9d455ebbd88, type: 3}

@@ -16,6 +16,6 @@ MonoBehaviour:
     UnitName: Test
     UnitDescription: "\uD14C\uC2A4\uD2B8\uC6A9\uC785\uB2C8"
     UnitSprite: {fileID: -1646661459, guid: b490dad17ebe1e84eb9c9c73e5b6e2c6, type: 3}
-    MaxHealth: 500
-    Strength: 20
-    EventData: {fileID: 698350497742135828, guid: 5acb1afd0098e434186c3f79c3a13321, type: 3}
+    MaxHealth: 120
+    Strength: 40
+    EventData: {fileID: 698350497742135828, guid: 5fd96df0520698c409732938a64889e8, type: 3}
