@@ -14,7 +14,7 @@ public struct UnitData
     public int MaxHealth;
     public int Strength;
     public UnitEventDataObject EventData;
-    public AnimatorController AnimatorController;
+    public AnimatorController UnitAnimController;
 
 }
 
